@@ -8,35 +8,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
 </head>
 
-<script>
-  let slides = document.querySelectorAll(".slide");
-  let currentIndex = 0;
-
-  function showSlides() {
-    slides.forEach((slide, i) => {
-      slide.style.opacity = (i === currentIndex) ? 1 : 0;
-    });
-    currentIndex = (currentIndex + 1) % slides.length;
-  }
-
-  showSlides();
-  setInterval(showSlides, 5000); // 5 seconds per slide
-</script>
-
 <body>
-<div class="hero-slideshow">
-  <div class="slide fade"><img src="images/mama.jpg" alt="Artwork 1"></div>
-  <div class="slide fade"><img src="images/Mrs Annies Nience.jpg" alt="Artwork 2"></div>
-  <div class="slide fade"><img src="images/Untitled-1.jpg" alt="Artwork 3"></div>
-  <div class="slide fade"><img src="images/Copy of Gravey.jpg" alt="Artwork 4"></div>
-  <div class="slide fade"><img src="images/Copy of Lillia_s mom.jpg" alt="Artwork 5"></div>
-  <div class="slide fade"><img src="images/Copy of pam mom 2.jpg" alt="Artwork 6"></div>
-  <div class="slide fade"><img src="images/Copy of Untitled-1.jpg" alt="Artwork 7"></div>
-  <div class="slide fade"><img src="images/Cynthia.jpg" alt="Artwork 8"></div>
-  <div class="slide fade"><img src="images/Jeanneta art.jpg" alt="Artwork 9"></div>
+
+<!-- Hero Slideshow Section -->
+<div class="hero">
+  <div class="hero-slideshow">
+    <img class="slide" src="images/Angela_Davis.jpg" alt="Angela Davis" />
+    <img class="slide" src="images/Copy_of_Gravey.jpg" alt="Copy of Gravey" />
+    <img class="slide" src="images/Copy_of_Lillia_s_mom.jpg" alt="Copy of Lillia's mom" />
+    <img class="slide" src="images/Copy_of_pam_mom_2.jpg" alt="Copy of pam mom 2" />
+    <img class="slide" src="images/Cynthia.jpg" alt="Cynthia" />
+    <img class="slide" src="images/daddy.jpg" alt="daddy" />
+    <img class="slide" src="images/Frans_grand_mother.jpg" alt="Frans grandmother" />
+    <img class="slide" src="images/Jeanneta_art.jpg" alt="Jeanneta art" />
+    <img class="slide" src="images/Kamala.jpg" alt="Kamala" />
+    <img class="slide" src="images/Malcom_X.jpg" alt="Malcom X" />
+    <img class="slide" src="images/mama.jpg" alt="mama" />
+    <img class="slide" src="images/Mrs_Annies_Nience.jpg" alt="Mrs Annies Nience" />
+    <img class="slide" src="images/Nigel.jpg" alt="Nigel" />
+    <img class="slide" src="images/Untitled-1.jpg" alt="Untitled-1" />
+  </div>
+  <div class="hero-overlay">
+    <h1>Talking Textiles</h1>
+    <p>A Celebration of Fabric Portraiture</p>
+  </div>
 </div>
 
-
+<!-- Navigation -->
 <nav>
   <a href="index.html">Home</a>
   <a href="gallery.html">Gallery</a>
@@ -46,23 +44,39 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-  <main class="intro">
-
-<section class="gallery-preview">
+<!-- Main Intro Section -->
+<main class="intro">
+  <section class="gallery-preview">
     <h2>Gallery Preview</h2>
     <div class="preview-row">
-        <a href="gallery.html"><img src="images/mama.jpg" alt="Portrait 1"></a>
-        <a href="gallery.html"><img src="images/Mrs Annies Nience.jpg" alt="Portrait 2"></a>
-        <a href="gallery.html"><img src="images/Untitled-1.jpg" alt="Portrait 3"></a>
-        <a href="gallery.html"><img src="images/Copy of Gravey.jpg" alt="Portrait 4"></a>
+      <a href="gallery.html"><img src="images/mama.jpg" alt="Portrait 1"></a>
+      <a href="gallery.html"><img src="images/Mrs_Annies_Nience.jpg" alt="Portrait 2"></a>
+      <a href="gallery.html"><img src="images/Untitled-1.jpg" alt="Portrait 3"></a>
+      <a href="gallery.html"><img src="images/Copy_of_Gravey.jpg" alt="Portrait 4"></a>
     </div>
-</section>
+  </section>
+</main>
 
- 
- </main>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Talking Textiles. All rights reserved.</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Talking Textiles. All rights reserved.</p>
-  </footer>
+<!-- Slideshow Script -->
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let currentIndex = 0;
+
+  function showSlides() {
+    slides.forEach((img, i) => {
+      img.style.opacity = (i === currentIndex) ? '1' : '0';
+    });
+    currentIndex = (currentIndex + 1) % slides.length;
+  }
+
+  showSlides();
+  setInterval(showSlides, 5000); // 5 seconds per slide
+</script>
+
 </body>
 </html>
