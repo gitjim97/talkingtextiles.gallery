@@ -7,13 +7,35 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
 </head>
+
+<script>
+  let slides = document.querySelectorAll(".slide");
+  let currentIndex = 0;
+
+  function showSlides() {
+    slides.forEach((slide, i) => {
+      slide.style.opacity = (i === currentIndex) ? 1 : 0;
+    });
+    currentIndex = (currentIndex + 1) % slides.length;
+  }
+
+  showSlides();
+  setInterval(showSlides, 5000); // 5 seconds per slide
+</script>
+
 <body>
-  <div class="hero">
-    <div class="hero-overlay">
-      <h1>Talking Textiles</h1>
-      <p>A Celebration of Fabric Portraiture</p>
-    </div>
-  </div>
+<div class="hero-slideshow">
+  <div class="slide fade"><img src="images/mama.jpg" alt="Artwork 1"></div>
+  <div class="slide fade"><img src="images/Mrs Annies Nience.jpg" alt="Artwork 2"></div>
+  <div class="slide fade"><img src="images/Untitled-1.jpg" alt="Artwork 3"></div>
+  <div class="slide fade"><img src="images/Copy of Gravey.jpg" alt="Artwork 4"></div>
+  <div class="slide fade"><img src="images/Copy of Lillia_s mom.jpg" alt="Artwork 5"></div>
+  <div class="slide fade"><img src="images/Copy of pam mom 2.jpg" alt="Artwork 6"></div>
+  <div class="slide fade"><img src="images/Copy of Untitled-1.jpg" alt="Artwork 7"></div>
+  <div class="slide fade"><img src="images/Cynthia.jpg" alt="Artwork 8"></div>
+  <div class="slide fade"><img src="images/Jeanneta art.jpg" alt="Artwork 9"></div>
+</div>
+
 
 <nav>
   <a href="index.html">Home</a>
@@ -33,7 +55,6 @@
     <section class="gallery">
       <h2>Gallery Preview</h2>
       <div class="gallery-grid">
-        <img src="images/hero.jpg" alt="Hero Image">
         <img src="images/fran.jpg" alt="Fran's Portrait">
         <img src="images/malcolm.jpg" alt="Malcolm X Portrait">
         <img src="images/mama1.jpg" alt="Mama 1">

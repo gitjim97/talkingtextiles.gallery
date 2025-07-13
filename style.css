@@ -21,22 +21,37 @@ nav a {
   font-weight: bold;
 }
 
-/* Hero Section */
-.hero {
-  background-image: url('images/hero.jpg'); /* Optional hero image */
-  background-size: cover;
-  background-position: center;
+/* Hero Slideshow */
+.hero-slideshow {
+  position: relative;
   height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 2rem;
 }
 
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optional text overlay (if desired in future) */
 .hero-overlay {
+  position: absolute;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 2em;
-  color: white;
+  width: 100%;
   text-align: center;
+  color: white;
+  padding: 1rem 0;
 }
 
 .hero-overlay h1 {
@@ -78,9 +93,8 @@ main.gallery {
   object-fit: contain;
   border: 4px solid #b67255;
   border-radius: 10px;
-  background-color: white; /* optional, adds a frame behind images of varying sizes */
-}
-
+  background-color: white;
+  transition: transform 0.3s ease;
 }
 
 .grid img:hover {
