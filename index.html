@@ -64,19 +64,22 @@
 
 <!-- Slideshow Script -->
 <script>
-  const slides = document.querySelectorAll('.slide');
-  let currentIndex = 0;
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
 
-  function showSlides() {
-    slides.forEach((img, i) => {
-      img.style.opacity = (i === currentIndex) ? '1' : '0';
-    });
-    currentIndex = (currentIndex + 1) % slides.length;
-  }
+    function showSlides() {
+      slides.forEach((img, i) => {
+        img.style.opacity = (i === currentIndex) ? '1' : '0';
+      });
+      currentIndex = (currentIndex + 1) % slides.length;
+    }
 
-  showSlides();
-  setInterval(showSlides, 5000); // 5 seconds per slide
+    showSlides();
+    setInterval(showSlides, 5000);
+  });
 </script>
+
 
 </body>
 </html>
