@@ -1,134 +1,53 @@
 body {
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
-    background-color: #fffdf4;
-    color: #222;
-}
-
-.hero {
-    background: url('images/hero.jpg') center center/cover no-repeat;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    text-align: center;
-}
-
-.hero-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 3rem;
-    border-radius: 12px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    color: #fff;
-    margin: 0;
-}
-
-.hero p {
-    color: #f7c948;
-    font-size: 1.5rem;
-    margin-top: 1rem;
+  font-family: 'Raleway', sans-serif;
+  background-color: #f7f1e1;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
-    background: #222;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-nav a {
-    color: #fff;
-    margin: 0 1rem;
-    text-decoration: none;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.intro {
-    padding: 2rem;
-    text-align: center;
-    background: #fff1d6;
-}
-
-.gallery-header {
-    background: linear-gradient(to right, #f7a700, #fbbd00, #54b948);
-    color: white;
-    padding: 2rem;
-    text-align: center;
-}
-
-.artist-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-}
-
-.artist-gallery article {
-    background: #fff;
-    border: 3px solid #f7a700;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.artist-gallery img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
-}
-
-footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-}
-
-.gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  padding: 20px;
-}
-
-.gallery-grid img {
-  width: 280px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  object-fit: cover;
-}
-
-.gallery {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  background-color: #b67255;
+  padding: 1em;
   text-align: center;
 }
 
-.gallery h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+nav a {
+  margin: 0 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.gallery-grid {
+.hero {
+  background-image: url('images/hero.jpg'); /* optional */
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2em;
+  color: white;
+  text-align: center;
+}
+
+main.gallery {
+  padding: 2em;
+}
+
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
 }
 
-.gallery-item img {
+.grid img {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  object-fit: cover;
+  border: 4px solid #b67255;
+  border-radius: 10px;
 }
