@@ -225,3 +225,20 @@ main.artist-detail {
   border-radius: 10px;
   background-color: white;
 }
+
+/* Footer Enhancements */
+footer p {
+  margin: 0.5em 0;
+}
+
+.footer-links a,
+footer .social a {
+  color: white;
+  margin: 0 0.5em;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+footer .social a:hover {
+  text-decoration: underline;
+}
