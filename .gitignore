@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # build output
 dist/
 # generated types
@@ -22,3 +23,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+=======
+*.pdf 
+*.zip 
+>>>>>>> 8103953839a44fa714a169335fbe522c0d3a5627
