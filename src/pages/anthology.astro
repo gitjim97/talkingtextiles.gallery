@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout pageTitle="Anthology">
+  <main class="anthology-page">
+    <h2>Order the Talking Textiles Anthology</h2>
+    <p>Get your hardcover copy of the show! Limited quantities available.</p>
+    <div class="anthology-book-section">
+      <div class="book-image-placeholder" style="background:#222; width:180px; height:240px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1rem; margin-bottom:1rem;">Book Cover</div>
+      <button style="background: orange; color: #fff; border: none; border-radius: 4px; padding: 0.7rem 2rem; font-size: 1.1rem; font-weight: bold; cursor: pointer;">Order Now</button>
+    </div>
+    <p style="margin-top:2rem; color:#bbb;">Already available for order. Shipping and pickup options at checkout.</p>
+  </main>
+  <style>
+    .anthology-page {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      color: #fff;
+      text-align: center;
+    }
+    .anthology-book-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    .book-image-placeholder {
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 600px) {
+      .anthology-page {
+        padding: 1rem 0.5rem;
+      }
+      .anthology-book-section {
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</Layout>
