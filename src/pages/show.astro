@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout pageTitle="Show Gallery">
+  <main class="gallery">
+    <h2>Show Gallery</h2>
+    <div class="grid">
+      <img src="/images/show/DAW1.jpg" alt="DAW1" loading="lazy" class="show-img" />
+      <img src="/images/show/DAW2.jpg" alt="DAW2" loading="lazy" class="show-img" />
+      <img src="/images/show/DAW3.jpg" alt="DAW3" loading="lazy" class="show-img" />
+      <img src="/images/show/DAW4.jpg" alt="DAW4" loading="lazy" class="show-img" />
+      <img src="/images/show/DAW5.jpg" alt="DAW5" loading="lazy" class="show-img" />
+      <img src="/images/show/DAW6.jpg" alt="DAW6" loading="lazy" class="show-img" />
+      <img src="/images/show/garyandlisha.jpg" alt="Gary and Lisha" loading="lazy" class="show-img" />
+    </div>
+    <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.95); align-items:center; justify-content:center; z-index:1000; flex-direction:column;">
+      <button id="close-lightbox" style="position:absolute; top:2rem; right:2rem; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;">&times;</button>
+      <button id="prev-img" style="position:absolute; left:2rem; top:50%; transform:translateY(-50%); background:none; border:none; color:#fff; font-size:3rem; cursor:pointer;">&#8592;</button>
+      <img id="lightbox-img" src="" alt="Large view" style="max-width:90vw; max-height:80vh; border-radius:1rem; box-shadow:0 4px 32px rgba(0,0,0,0.5);" />
+      <button id="next-img" style="position:absolute; right:2rem; top:50%; transform:translateY(-50%); background:none; border:none; color:#fff; font-size:3rem; cursor:pointer;">&#8594;</button>
+    </div>
+    <script type="text/javascript">
+      const images = Array.from(document.querySelectorAll('.show-img'));
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn = document.getElementById('close-lightbox');
+      const prevBtn = document.getElementById('prev-img');
+      const nextBtn = document.getElementById('next-img');
+      let currentIdx = 0;
+      const imgSrcs = images.map(img => img.src);
+      images.forEach((img, idx) => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+          currentIdx = idx;
+          lightboxImg.src = imgSrcs[currentIdx];
+          lightbox.style.display = 'flex';
+        });
+      });
+      function showImg(idx) {
+        currentIdx = (idx + imgSrcs.length) % imgSrcs.length;
+        lightboxImg.src = imgSrcs[currentIdx];
+      }
+      prevBtn.addEventListener('click', () => showImg(currentIdx - 1));
+      nextBtn.addEventListener('click', () => showImg(currentIdx + 1));
+      closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+      });
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = 'none';
+          lightboxImg.src = '';
+        }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+          if (e.key === 'ArrowLeft') showImg(currentIdx - 1);
+          if (e.key === 'ArrowRight') showImg(currentIdx + 1);
+          if (e.key === 'Escape') {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+          }
+        }
+      });
+    </script>
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+      }
+      .grid img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+        cursor: pointer;
+      }
+      .grid img:hover, .grid img:focus-visible {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+        transform: translateY(-8px);
+        z-index: 2;
+      }
+    </style>
+  </main>
+</Layout>

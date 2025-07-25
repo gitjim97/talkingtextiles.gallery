@@ -1,16 +1,39 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <header style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 320px; background: #111; margin-bottom: 2rem; overflow: hidden;">
+    <img id="hero-slideshow" src="/images/Angela_Davis.jpg" alt="Gallery Slideshow" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block;" />
+  </header>
+  <script type="text/javascript">
+    const images = [
+      "/images/Angela_Davis.jpg",
+      "/images/Copy_of_Gravey.jpg",
+      "/images/Copy_of_Lillia_s_mom.jpg",
+      "/images/Copy_of_pam_mom_2.jpg",
+      "/images/Cynthia.jpg",
+      "/images/daddy.jpg",
+      "/images/Frans_grand_mother.jpg",
+      "/images/Jeanneta_art.jpg",
+      "/images/Kamala.jpg",
+      "/images/Malcom_X.jpg",
+      "/images/mama.jpg",
+      "/images/Mrs_Annies_Nience.jpg",
+      "/images/Nigel.jpg",
+      "/images/Untitled-1.jpg"
+    ];
+    let idx = 0;
+    setInterval(() => {
+      idx = (idx + 1) % images.length;
+      document.getElementById('hero-slideshow').src = images[idx];
+    }, 2500);
+  </script>
+
+  <main>
+    <h1>Welcome to Talking Textiles</h1>
+    <p>Discover artists, stories, and culture through fabric and form.</p>
+
+    <!-- Gallery Images section removed as requested -->
+  </main>
+</Layout>

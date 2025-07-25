@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+---
+
+<Layout pageTitle="Gallery">
+  <main class="gallery">
+    <h2>Gallery of Artists</h2>
+    <div class="grid">
+      <a href="/artist_pages/Angela_Davis"><Image src="/images/Angela_Davis.jpg" alt="Angela Davis" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/Copy_of_Gravey"><Image src="/images/Copy_of_Gravey.jpg" alt="Copy of Gravey" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/lillia_s_mom"><Image src="/images/Copy_of_Lillia_s_mom.jpg" alt="Lillia's Mom" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/copy_of_pam_mom_2"><Image src="/images/Copy_of_pam_mom_2.jpg" alt="Pam's Mom 2" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/Cynthia"><Image src="/images/Cynthia.jpg" alt="Cynthia" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/Daddy"><Image src="/images/daddy.jpg" alt="Daddy" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/frans_grand_mother"><Image src="/images/Frans_grand_mother.jpg" alt="Frans' Grandmother" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/Jeanneta_art"><Image src="/images/Jeanneta_art.jpg" alt="Jeanneta" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/Kamala"><Image src="/images/Kamala.jpg" alt="Kamala" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/Malcom_X"><Image src="/images/Malcom_X.jpg" alt="Malcom X" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/Mama"><Image src="/images/mama.jpg" alt="Mama" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/mrs_annies_nience"><Image src="/images/Mrs_Annies_Nience.jpg" alt="Mrs. Annie’s Niece" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/Nigel"><Image src="/images/Nigel.jpg" alt="Nigel" width={180} height={180} loading="lazy" format="webp" /></a>
+      <a href="/artist_pages/Untitled-1"><Image src="/images/Untitled-1.jpg" alt="Untitled" width={180} height={180} loading="lazy" format="webp" /></a>
+    </div>
+  </main>
+  <style>
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .grid a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .grid a:hover, .grid a:focus-visible {
+      transform: translateY(-8px) scale(1.07);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      z-index: 2;
+    }
+    @media (pointer: coarse) {
+      .grid a:hover, .grid a:focus-visible {
+        transform: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        z-index: auto;
+      }
+      .grid a:hover img, .grid a:focus-visible img {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      }
+    }
+    .grid img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .grid a:hover img, .grid a:focus-visible img {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+    @media (max-width: 600px) {
+      .grid {
+        gap: 0.5rem;
+      }
+      .grid img {
+        max-width: 44vw;
+        min-width: 120px;
+      }
+    }
+    @media (max-width: 400px) {
+      .grid img {
+        max-width: 90vw;
+        min-width: 80px;
+      }
+    }
+  </style>
+</Layout>
