@@ -127,13 +127,34 @@ main.gallery {
   margin-bottom: 1rem;
 }
 
+.preview-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .preview-row {
   display: flex;
-  justify-content: center;
   gap: 1rem;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow: hidden;
   padding-bottom: 1rem;
+  flex: 1;
+  scroll-behavior: smooth;
+}
+
+.preview-nav {
+  background-color: #b67255;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.preview-nav:hover {
+  background-color: #a15f47;
 }
 
 .preview-row img {
