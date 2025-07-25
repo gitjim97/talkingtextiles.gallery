@@ -48,11 +48,10 @@
 <main class="intro">
   <section class="gallery-preview">
     <h2>Gallery Preview</h2>
-    <div class="preview-row">
-      <a href="gallery.html"><img src="images/mama.jpg" alt="Portrait 1"></a>
-      <a href="gallery.html"><img src="images/Mrs_Annies_Nience.jpg" alt="Portrait 2"></a>
-      <a href="gallery.html"><img src="images/Untitled-1.jpg" alt="Portrait 3"></a>
-      <a href="gallery.html"><img src="images/Copy_of_Gravey.jpg" alt="Portrait 4"></a>
+    <div class="preview-nav">
+      <button id="preview-prev" aria-label="Previous">&#8249;</button>
+      <div class="preview-row"></div>
+      <button id="preview-next" aria-label="Next">&#8250;</button>
     </div>
   </section>
 </main>
@@ -63,10 +62,10 @@
 </footer>
 
 <!-- Slideshow Script -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll('.slide');
+      let currentIndex = 0;
 
     function showSlides() {
       slides.forEach((img, i) => {
@@ -75,10 +74,64 @@
       currentIndex = (currentIndex + 1) % slides.length;
     }
 
-    showSlides();
-    setInterval(showSlides, 5000);
-  });
-</script>
+      showSlides();
+      setInterval(showSlides, 5000);
+    });
+  </script>
+
+  <!-- Gallery Preview Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const previewRow = document.querySelector('.preview-row');
+      const images = [
+        'Angela_Davis.jpg',
+        'Copy_of_Gravey.jpg',
+        'Copy_of_Lillia_s_mom.jpg',
+        'Copy_of_pam_mom_2.jpg',
+        'Cynthia.jpg',
+        'daddy.jpg',
+        'Frans_grand_mother.jpg',
+        'Jeanneta_art.jpg',
+        'Kamala.jpg',
+        'Malcom_X.jpg',
+        'mama.jpg',
+        'Mrs_Annies_Nience.jpg',
+        'Nigel.jpg',
+        'Untitled-1.jpg'
+      ];
+
+      images.sort(() => Math.random() - 0.5);
+
+      let start = 0;
+      const perPage = 5;
+
+      function render() {
+        previewRow.innerHTML = '';
+        for (let i = 0; i < perPage; i++) {
+          const index = (start + i) % images.length;
+          const link = document.createElement('a');
+          link.href = 'gallery.html';
+          const img = document.createElement('img');
+          img.src = 'images/' + images[index];
+          img.alt = 'Gallery preview image';
+          link.appendChild(img);
+          previewRow.appendChild(link);
+        }
+      }
+
+      document.getElementById('preview-prev').addEventListener('click', function () {
+        start = (start - perPage + images.length) % images.length;
+        render();
+      });
+
+      document.getElementById('preview-next').addEventListener('click', function () {
+        start = (start + perPage) % images.length;
+        render();
+      });
+
+      render();
+    });
+  </script>
 
 
 </body>

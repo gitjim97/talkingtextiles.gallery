@@ -121,10 +121,26 @@ main.gallery {
   text-align: center;
 }
 
+
 .gallery-preview h2 {
   font-family: 'Raleway', sans-serif;
   font-size: 1.6rem;
   margin-bottom: 1rem;
+}
+
+.preview-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.preview-nav button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #b67255;
 }
 
 .preview-row {
