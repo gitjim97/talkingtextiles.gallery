@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <header style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 320px; background: #111; margin-bottom: 2rem; overflow: hidden;">
+  <header style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 480px; background: #111; margin-bottom: 2rem; overflow: hidden;">
     <img id="hero-slideshow-1" src="/images/Angela_Davis.jpg" alt="Gallery Slideshow" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 2;" />
     <img id="hero-slideshow-2" src="/images/Angela_Davis.jpg" alt="Gallery Slideshow" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 1;" />
   </header>
@@ -22,7 +22,8 @@ import Layout from '../layouts/Layout.astro';
       "/images/mama.jpg",
       "/images/Mrs_Annies_Nience.jpg",
       "/images/Nigel.jpg",
-      "/images/Untitled-1.jpg"
+      "/images/Untitled-1.jpg",
+      "/images/Page 30.jpg"
     ];
     let idx = 0;
     let showing = 1;
@@ -78,10 +79,9 @@ import Layout from '../layouts/Layout.astro';
     setInterval(crossfadeToNext, 6000);
   </script>
 
-  <main>
-    <h1>Welcome to Talking Textiles</h1>
-    <p>Discover artists, stories, and culture through fabric and form.</p>
-
+  <main style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;">
+    <h1 style="color: #fff; text-align: center; font-size: 2.8rem; margin-bottom: 1rem; letter-spacing: 0.02em;">Welcome to Talking Textiles</h1>
+    <p style="color: #fff; text-align: center; font-size: 1.35rem; max-width: 600px; margin: 0 auto 1.5rem auto;">Discover artists, stories, and culture through fabric and form.</p>
     <!-- Gallery Images section removed as requested -->
   </main>
 </Layout>
