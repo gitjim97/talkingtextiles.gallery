@@ -13,7 +13,13 @@ import "../styles/global.css";
       <ul style="display: flex; justify-content: center; gap: 2rem; list-style: none; margin: 0; padding: 0;">
         <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="/gallery" class="nav-link">Gallery</a></li>
-        <li><a href="/show" class="nav-link">Show</a></li>
+        <li class="dropdown" tabindex="0" style="position: relative;">
+          <span class="nav-link" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center; gap: 0.4em; cursor: pointer;">Show <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2px;"><path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <ul class="dropdown-menu" style="pointer-events: auto;">
+            <li><a href="/show/photos" class="nav-link" tabindex="0">Photos</a></li>
+        <li><a href="/show/event-dates" class="nav-link" tabindex="0">Event Dates</a></li>
+          </ul>
+        </li>
         <li class="dropdown" tabindex="0" style="position: relative;">
           <span class="nav-link" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center; gap: 0.4em; cursor: pointer;">Classes <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2px;"><path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span>
           <ul class="dropdown-menu" style="pointer-events: auto;">
