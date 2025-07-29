@@ -14,7 +14,13 @@ import "../styles/global.css";
         <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="/gallery" class="nav-link">Gallery</a></li>
         <li><a href="/show" class="nav-link">Show</a></li>
-        <li><a href="/classes" class="nav-link">Classes</a></li>
+        <li class="dropdown" tabindex="0" style="position: relative;">
+          <span class="nav-link" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center; gap: 0.4em; cursor: pointer;">Classes <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2px;"><path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <ul class="dropdown-menu" style="pointer-events: auto;">
+            <li><a href="/classes/photos" class="nav-link" tabindex="0">Photos</a></li>
+            <li><a href="/classes/book" class="nav-link" tabindex="0">Book Now</a></li>
+          </ul>
+        </li>
         <li><a href="/anthology" class="nav-link">Anthology</a></li>
       </ul>
       <style>
@@ -44,6 +50,49 @@ import "../styles/global.css";
         .nav-link:hover::after, .nav-link:focus-visible::after {
           opacity: 1;
           transform: scaleX(1);
+        }
+        .dropdown {
+          position: relative;
+          /* Ensure dropdown stays open when moving from trigger to menu */
+          &:hover .dropdown-menu,
+          &:focus-within .dropdown-menu {
+            display: block;
+          }
+        }
+        .dropdown-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          background: orange;
+          min-width: 150px;
+          box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+          border-radius: 0;
+          z-index: 10;
+          padding: 0.5rem 0;
+          pointer-events: auto;
+        }
+        .dropdown:focus-within .dropdown-menu,
+        .dropdown:hover .dropdown-menu,
+        /* Remove duplicate selector, handled above */
+        .dropdown-menu li {
+          display: block;
+          text-align: left;
+        }
+        .dropdown-menu .nav-link {
+          color: #fff;
+          padding: 0.5rem 1.2rem;
+          display: block;
+          font-weight: normal;
+          background: none;
+        }
+        .dropdown-menu .nav-link:hover {
+          background: #fff3e0;
+          color: orange;
+        }
+        .dropdown-menu a {
+          pointer-events: auto;
         }
       </style>
     </nav>
