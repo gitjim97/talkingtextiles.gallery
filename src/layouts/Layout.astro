@@ -1,120 +1,27 @@
 ---
 import "../styles/global.css";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props { pageTitle?: string }
+const { pageTitle } = Astro.props as Props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Talking Textiles Gallery</title>
-    <script src="/js/random-favicon.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle ? `${pageTitle} | Talking Textiles` : "Talking Textiles Gallery"}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#ffa500" />
+    <meta name="description" content="Talking Textiles Gallery: artists, stories, and culture through fabric and form." />
   </head>
   <body style="min-height: 100vh; display: flex; flex-direction: column;">
-    <nav style="background: orange; padding: 1rem 0;">
-      <ul style="display: flex; justify-content: center; gap: 2rem; list-style: none; margin: 0; padding: 0;">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/gallery" class="nav-link">Gallery</a></li>
-        <li class="dropdown" tabindex="0" style="position: relative;">
-          <span class="nav-link" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center; gap: 0.4em; cursor: pointer;">Show <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2px;"><path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span>
-          <ul class="dropdown-menu" style="pointer-events: auto;">
-            <li><a href="/show/photos" class="nav-link" tabindex="0">Photos</a></li>
-        <li><a href="/show/event-dates" class="nav-link" tabindex="0">Event Dates</a></li>
-          </ul>
-        </li>
-        <li class="dropdown" tabindex="0" style="position: relative;">
-          <span class="nav-link" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center; gap: 0.4em; cursor: pointer;">Classes <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2px;"><path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span>
-          <ul class="dropdown-menu" style="pointer-events: auto;">
-            <li><a href="/classes/photos" class="nav-link" tabindex="0">Photos</a></li>
-            <li><a href="/classes/book" class="nav-link" tabindex="0">Book Now</a></li>
-          </ul>
-        </li>
-        <li><a href="/anthology" class="nav-link">Anthology</a></li>
-      </ul>
-      <style>
-        .nav-link {
-          color: white;
-          text-decoration: none;
-          font-weight: bold;
-          position: relative;
-          transition: color 0.25s cubic-bezier(0.22,1,0.36,1);
-        }
-        .nav-link::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -4px;
-          width: 100%;
-          height: 3px;
-          background: #fff;
-          border-radius: 2px;
-          opacity: 0;
-          transform: scaleX(0);
-          transition: opacity 0.25s, transform 0.25s cubic-bezier(0.22,1,0.36,1);
-        }
-        .nav-link:hover, .nav-link:focus-visible {
-          color: #222;
-        }
-        .nav-link:hover::after, .nav-link:focus-visible::after {
-          opacity: 1;
-          transform: scaleX(1);
-        }
-        .dropdown {
-          position: relative;
-          /* Ensure dropdown stays open when moving from trigger to menu */
-          &:hover .dropdown-menu,
-          &:focus-within .dropdown-menu {
-            display: block;
-          }
-        }
-        .dropdown-menu {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          transform: translateX(-50%);
-          background: orange;
-          min-width: 150px;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-          border-radius: 0;
-          z-index: 10;
-          padding: 0.5rem 0;
-          pointer-events: auto;
-        }
-        .dropdown:focus-within .dropdown-menu,
-        .dropdown:hover .dropdown-menu,
-        /* Remove duplicate selector, handled above */
-        .dropdown-menu li {
-          display: block;
-          text-align: left;
-        }
-        .dropdown-menu .nav-link {
-          color: #fff;
-          padding: 0.5rem 1.2rem;
-          display: block;
-          font-weight: normal;
-          background: none;
-        }
-        .dropdown-menu .nav-link:hover {
-          background: #fff3e0;
-          color: orange;
-        }
-        .dropdown-menu a {
-          pointer-events: auto;
-        }
-      </style>
-    </nav>
+    <Nav />
     <div style="flex: 1 0 auto;">
       <slot />
     </div>
-    <footer style="background: #111; color: #fff; padding: 2rem 0; text-align: center; margin-top: 3rem; flex-shrink: 0;">
-      <div style="max-width: 900px; margin: 0 auto;">
-
-        <p style="margin-bottom: 0.5rem;">Email: info@talkingtextiles.com | Phone: (909) 455-8659</p>
-        <p style="font-size: 0.95rem; color: #bbb;">Follow us on
-          <a href="#" style="color: #ffa500; text-decoration: none; margin: 0 0.5rem;">Instagram</a>
-          <a href="#" style="color: #ffa500; text-decoration: none; margin: 0 0.5rem;">Facebook</a>
-        <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">&copy; 2025 Talking Textiles. All rights reserved.</p>
-        </p>
-      </div>
-    </footer>
+    <Footer />
   </body>
+  
 </html>

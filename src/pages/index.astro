@@ -4,26 +4,22 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
   <header style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 480px; background: #111; margin-bottom: 2rem; overflow: hidden;">
-    <img id="hero-slideshow-1" src="/images/Angela_Davis.jpg" alt="Gallery Slideshow" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 2;" />
-    <img id="hero-slideshow-2" src="/images/Angela_Davis.jpg" alt="Gallery Slideshow" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 1;" />
+    <link rel="preload" as="image" href="/images/hero/Angela_Davis-1600.webp" />
+    <link rel="preload" as="image" href="/images/hero/Cynthia-1600.webp" />
+    <img id="hero-slideshow-1" src="/images/hero/Angela_Davis-1600.webp" alt="Gallery Slideshow" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 2;" />
+    <img id="hero-slideshow-2" src="/images/hero/Angela_Davis-1600.webp" alt="Gallery Slideshow" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 1;" />
   </header>
   <script type="text/javascript">
     const images = [
-      "/images/Angela_Davis.jpg",
-      "/images/Copy_of_Gravey.jpg",
-      "/images/Copy_of_Lillia_s_mom.jpg",
-      "/images/Copy_of_pam_mom_2.jpg",
-      "/images/Cynthia.jpg",
-      "/images/daddy.jpg",
-      "/images/Frans_grand_mother.jpg",
-      "/images/Jeanneta_art.jpg",
-      "/images/Kamala.jpg",
-      "/images/Malcom_X.jpg",
-      "/images/mama.jpg",
-      "/images/Mrs_Annies_Nience.jpg",
-      "/images/Nigel.jpg",
-      "/images/Untitled-1.jpg",
-      "/images/Page 30.jpg"
+      "/images/hero/Angela_Davis-1600.webp",
+      "/images/hero/Cynthia-1600.webp",
+      "/images/hero/Frans_grand_mother-1600.webp",
+      "/images/hero/Jeanneta_art-1600.webp",
+      "/images/hero/Kamala-1600.webp",
+      "/images/hero/Malcom_X-1600.webp",
+      "/images/hero/mama-1600.webp",
+      "/images/hero/Nigel-1600.webp",
+      "/images/hero/Untitled-1-1600.webp"
     ];
     let idx = 0;
     let showing = 1;
@@ -82,6 +78,11 @@ import Layout from '../layouts/Layout.astro';
   <main style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;">
     <h1 style="color: #fff; text-align: center; font-size: 2.8rem; margin-bottom: 1rem; letter-spacing: 0.02em;">Welcome to Talking Textiles</h1>
     <p style="color: #fff; text-align: center; font-size: 1.35rem; max-width: 600px; margin: 0 auto 1.5rem auto;">Discover artists, stories, and culture through fabric and form.</p>
+    
+    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+      <a href="/gallery" style="background: #ffa500; color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: bold; transition: background 0.25s;">View Gallery</a>
+      <a href="/show/book" style="background: transparent; color: #ffa500; text-decoration: none; padding: 0.75rem 1.5rem; border: 2px solid #ffa500; border-radius: 4px; font-weight: bold; transition: all 0.25s;">Book the Show</a>
+    </div>
     <!-- Gallery Images section removed as requested -->
   </main>
 </Layout>

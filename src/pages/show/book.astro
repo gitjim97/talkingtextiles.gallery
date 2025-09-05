@@ -1,0 +1,253 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout pageTitle="Book the Show">
+  <main class="booking-page">
+    <h2>Book Talking Textiles Show</h2>
+    <p class="intro">Bring this powerful exhibition to your venue, gallery, or community space.</p>
+    
+    <div class="booking-form-section">
+      <div class="booking-info">
+        <h3>Exhibition Details</h3>
+        <ul>
+          <li>Professional textile art exhibition</li>
+          <li>Educational programming available</li>
+          <li>Community engagement opportunities</li>
+          <li>Flexible duration (2-8 weeks typical)</li>
+        </ul>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Request Booking Information</h3>
+        <form action="https://formspree.io/f/meolprpw" method="post" class="booking-form">
+          <!-- Now connected to Formspree! Submissions will go to your email. -->
+          <div class="form-row">
+            <label for="venue-name">Venue/Organization Name *</label>
+            <input type="text" id="venue-name" name="venue-name" required />
+          </div>
+          
+          <div class="form-row">
+            <label for="contact-name">Contact Person *</label>
+            <input type="text" id="contact-name" name="contact-name" required />
+          </div>
+          
+          <div class="form-row">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          
+          <div class="form-row">
+            <label for="location">Venue Address *</label>
+            <input type="text" id="location" name="location" placeholder="Full venue address (Street, City, State, ZIP)" required />
+            <small style="color: #ccc; font-size: 0.85rem;">Please provide the complete address for accurate location information</small>
+          </div>
+          
+          <div class="form-row">
+            <label for="preferred-dates">Preferred Dates</label>
+            <input type="text" id="preferred-dates" name="preferred-dates" placeholder="e.g., Spring 2024, flexible" />
+          </div>
+          
+          <div class="form-row">
+            <label for="venue-type">Venue Type</label>
+            <select id="venue-type" name="venue-type">
+              <option value="">Select venue type</option>
+              <option value="gallery">Art Gallery</option>
+              <option value="museum">Museum</option>
+              <option value="community">Community Center</option>
+              <option value="university">University/School</option>
+              <option value="library">Library</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-row">
+            <label for="message">Additional Information</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your space, audience, and goals for the exhibition..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Booking Request</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="contact-direct">
+      <h3>Or Contact Directly</h3>
+      <p>Email: <a href="mailto:info@talkingtextiles.com">info@talkingtextiles.com</a></p>
+      <p>Phone: <a href="tel:+19094558659">(909) 455-8659</a></p>
+    </div>
+  </main>
+
+  <script is:inline>
+    // Enhanced address validation
+    document.addEventListener('DOMContentLoaded', function() {
+      const locationInput = document.getElementById('location');
+      const form = document.querySelector('.booking-form');
+      
+      if (locationInput && form) {
+        // Add helpful address formatting on blur
+        locationInput.addEventListener('blur', function() {
+          const value = this.value.trim();
+          if (value && !value.includes(',')) {
+            // Suggest proper formatting if no commas detected
+            const hint = document.createElement('small');
+            hint.style.color = '#ffa500';
+            hint.style.display = 'block';
+            hint.style.marginTop = '0.25rem';
+            hint.textContent = 'Tip: Include commas for better formatting (e.g., 123 Main St, City, State 12345)';
+            
+            // Remove existing hint
+            const existingHint = this.parentNode.querySelector('.address-hint');
+            if (existingHint) existingHint.remove();
+            
+            hint.className = 'address-hint';
+            this.parentNode.appendChild(hint);
+          }
+        });
+        
+        // Remove hint when user starts typing again
+        locationInput.addEventListener('input', function() {
+          const hint = this.parentNode.querySelector('.address-hint');
+          if (hint) hint.remove();
+        });
+      }
+    });
+  </script>
+
+  <style>
+    .booking-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      color: #fff;
+    }
+    
+    .intro {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #ccc;
+    }
+    
+    .booking-form-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .booking-info h3 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+    
+    .booking-info ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .booking-info li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #333;
+    }
+    
+    .booking-info li:before {
+      content: "✓ ";
+      color: #ffa500;
+      font-weight: bold;
+    }
+    
+    .contact-form h3 {
+      color: #ffa500;
+      margin-bottom: 1.5rem;
+    }
+    
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .form-row label {
+      font-weight: bold;
+      color: #fff;
+    }
+    
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      padding: 0.75rem;
+      border: 2px solid #333;
+      border-radius: 4px;
+      background: #111;
+      color: #fff;
+      font-size: 1rem;
+    }
+    
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      outline: none;
+      border-color: #ffa500;
+    }
+    
+    .submit-btn {
+      background: #ffa500;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.25s;
+    }
+    
+    .submit-btn:hover {
+      background: #e6940a;
+    }
+    
+    .contact-direct {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      border-radius: 8px;
+    }
+    
+    .contact-direct h3 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-direct a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+    
+    .contact-direct a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .booking-form-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .booking-page {
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
+</Layout>

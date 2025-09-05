@@ -1,0 +1,141 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout pageTitle="Thank You">
+  <main class="thank-you-page">
+    <div class="thank-you-content">
+      <h2>Thank You!</h2>
+      <p>Your booking request has been received successfully.</p>
+      
+      <div class="next-steps">
+        <h3>What happens next?</h3>
+        <ol>
+          <li>We'll review your request within 1-2 business days</li>
+          <li>Someone will contact you to discuss details and availability</li>
+          <li>We'll work together to plan the perfect exhibition for your space</li>
+        </ol>
+      </div>
+      
+      <div class="contact-info">
+        <p>Questions? Contact us directly:</p>
+        <p>Email: <a href="mailto:info@talkingtextiles.com">info@talkingtextiles.com</a></p>
+        <p>Phone: <a href="tel:+19094558659">(909) 455-8659</a></p>
+      </div>
+      
+      <div class="navigation-links">
+        <a href="/" class="btn-primary">Return Home</a>
+        <a href="/gallery" class="btn-secondary">View Gallery</a>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .thank-you-page {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+      color: #fff;
+      text-align: center;
+    }
+    
+    .thank-you-content h2 {
+      color: #ffa500;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .thank-you-content > p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+    }
+    
+    .next-steps {
+      background: #111;
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    
+    .next-steps h3 {
+      color: #ffa500;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    
+    .next-steps ol {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    
+    .next-steps li {
+      margin: 0.75rem 0;
+      line-height: 1.5;
+    }
+    
+    .contact-info {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #0a0a0a;
+      border-radius: 8px;
+    }
+    
+    .contact-info a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    .navigation-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.25s;
+    }
+    
+    .btn-primary {
+      background: #ffa500;
+      color: #fff;
+    }
+    
+    .btn-primary:hover {
+      background: #e6940a;
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: #ffa500;
+      border: 2px solid #ffa500;
+    }
+    
+    .btn-secondary:hover {
+      background: #ffa500;
+      color: #fff;
+    }
+    
+    @media (max-width: 600px) {
+      .navigation-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .thank-you-page {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</Layout>

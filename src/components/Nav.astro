@@ -1,0 +1,77 @@
+<nav style="background: orange; padding: 1rem 0;">
+  <ul style="display: flex; justify-content: center; gap: 2rem; list-style: none; margin: 0; padding: 0;">
+    <li><a href="/" class="nav-link">Home</a></li>
+    <li><a href="/gallery" class="nav-link">Gallery</a></li>
+    <li class="dropdown" tabindex="0" style="position: relative;">
+      <span class="nav-link" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center; gap: 0.4em; cursor: pointer;">Show
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2px;"><path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </span>
+      <ul class="dropdown-menu" style="pointer-events: auto;">
+        <li><a href="/show/photos" class="nav-link" tabindex="0">Photos</a></li>
+        <li><a href="/show/event-dates" class="nav-link" tabindex="0">Event Dates</a></li>
+        <li><a href="/show/book" class="nav-link" tabindex="0">Book Show</a></li>
+      </ul>
+    </li>
+    <li class="dropdown" tabindex="0" style="position: relative;">
+      <span class="nav-link" aria-haspopup="true" aria-expanded="false" style="display: flex; align-items: center; gap: 0.4em; cursor: pointer;">Classes
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 2px;"><path d="M1 1L6 6L11 1" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </span>
+      <ul class="dropdown-menu" style="pointer-events: auto;">
+        <li><a href="/classes/photos" class="nav-link" tabindex="0">Photos</a></li>
+        <li><a href="/classes/book" class="nav-link" tabindex="0">Book Now</a></li>
+      </ul>
+    </li>
+    <li><a href="/anthology" class="nav-link">Anthology</a></li>
+  </ul>
+  <style>
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.25s cubic-bezier(0.22,1,0.36,1);
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+      opacity: 0;
+      transform: scaleX(0);
+      transition: opacity 0.25s, transform 0.25s cubic-bezier(0.22,1,0.36,1);
+    }
+    .nav-link:hover, .nav-link:focus-visible { color: #222; }
+    .nav-link:hover::after, .nav-link:focus-visible::after { opacity: 1; transform: scaleX(1); }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: orange;
+      min-width: 150px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      border-radius: 0;
+      z-index: 10;
+      padding: 0.5rem 0;
+      pointer-events: auto;
+    }
+    .dropdown:hover .dropdown-menu,
+    .dropdown:focus-within .dropdown-menu { display: block; }
+    .dropdown-menu li { display: block; text-align: left; }
+    .dropdown-menu .nav-link {
+      color: #fff;
+      padding: 0.5rem 1.2rem;
+      display: block;
+      font-weight: normal;
+      background: none;
+    }
+    .dropdown-menu .nav-link:hover { background: #fff3e0; color: orange; }
+    .dropdown-menu a { pointer-events: auto; }
+  </style>
+</nav>
