@@ -8,7 +8,7 @@ import Layout from '../layouts/Layout.astro';
     <p>Get your hardcover copy of the show! Limited quantities available.</p>
     <div class="anthology-book-section">
   <img src="/images/AnthCover.jpg" alt="Anthology Book Cover" style="width:180px; height:240px; object-fit:cover; border-radius:8px; margin-bottom:1rem; box-shadow:0 4px 16px rgba(0,0,0,0.18);" />
-  <button style="background: orange; color: #fff; border: none; border-radius: 4px; padding: 0.7rem 2rem; font-size: 1.1rem; font-weight: bold; cursor: pointer;">Coming Soon</button>
+  <a href="/classes/book" style="background: orange; color: #fff; border: none; border-radius: 4px; padding: 0.7rem 2rem; font-size: 1.1rem; font-weight: bold; text-decoration: none; display: inline-block; transition: background 0.25s;">Purchase Book - $35</a>
     </div>
      </main>
   <style>
@@ -24,6 +24,9 @@ import Layout from '../layouts/Layout.astro';
       flex-direction: column;
       align-items: center;
       margin-top: 2rem;
+    }
+    .anthology-book-section a:hover {
+      background: #e6940a !important;
     }
     .book-image-placeholder {
       margin-bottom: 1rem;

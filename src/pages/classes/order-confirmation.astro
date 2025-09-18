@@ -1,0 +1,176 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout pageTitle="Order Confirmation">
+  <main class="confirmation-page">
+    <div class="confirmation-content">
+      <div class="success-icon">✓</div>
+      <h2>Order Submitted Successfully!</h2>
+      <p class="confirmation-message">
+        Thank you for your order! We've received your book purchase request and will process it shortly.
+      </p>
+      
+      <div class="next-steps">
+        <h3>What happens next?</h3>
+        <ol>
+          <li><strong>Email Confirmation:</strong> You'll receive an email confirmation with your order details within a few minutes.</li>
+          <li><strong>Payment Instructions:</strong> We'll send you an invoice with the total cost (including shipping) and payment options.</li>
+          <li><strong>Processing:</strong> Once payment is received, we'll prepare your book for shipping.</li>
+          <li><strong>Shipping:</strong> You'll receive tracking information when your order ships.</li>
+        </ol>
+      </div>
+      
+      <div class="contact-info">
+        <h3>Questions about your order?</h3>
+        <p>Contact us at <a href="mailto:info@talkingtextiles.com">info@talkingtextiles.com</a></p>
+        <p>Or call <a href="tel:+19094558659">(909) 455-8659</a></p>
+      </div>
+      
+      <div class="action-buttons">
+        <a href="/" class="btn btn-primary">Return to Homepage</a>
+        <a href="/gallery" class="btn btn-secondary">View Gallery</a>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .confirmation-page {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      color: #fff;
+    }
+    
+    .confirmation-content {
+      max-width: 600px;
+      text-align: center;
+      background: #111;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      border: 2px solid #ffa500;
+    }
+    
+    .success-icon {
+      font-size: 4rem;
+      color: #4CAF50;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    
+    .confirmation-content h2 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    
+    .confirmation-message {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .next-steps {
+      text-align: left;
+      margin-bottom: 2rem;
+      background: #000;
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+    
+    .next-steps h3 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .next-steps ol {
+      color: #ccc;
+      line-height: 1.6;
+    }
+    
+    .next-steps li {
+      margin-bottom: 1rem;
+    }
+    
+    .next-steps strong {
+      color: #fff;
+    }
+    
+    .contact-info {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: #000;
+      border-radius: 8px;
+    }
+    
+    .contact-info h3 {
+      color: #ffa500;
+      margin-bottom: 0.5rem;
+    }
+    
+    .contact-info a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.25s;
+      display: inline-block;
+    }
+    
+    .btn-primary {
+      background: #ffa500;
+      color: #fff;
+    }
+    
+    .btn-primary:hover {
+      background: #e6940a;
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: #ffa500;
+      border: 2px solid #ffa500;
+    }
+    
+    .btn-secondary:hover {
+      background: #ffa500;
+      color: #fff;
+    }
+    
+    @media (max-width: 600px) {
+      .confirmation-content {
+        padding: 2rem 1rem;
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  </style>
+</Layout>

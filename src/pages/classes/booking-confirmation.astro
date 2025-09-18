@@ -1,0 +1,238 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout pageTitle="Class Booking Confirmation">
+  <main class="confirmation-page">
+    <div class="confirmation-content">
+      <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#ffa500" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22,4 12,14.01 9,11.01"></polyline>
+        </svg>
+      </div>
+      
+      <h1>Class Booking Request Received!</h1>
+      
+      <p class="main-message">
+        Thank you for your interest in our textile arts classes. We've received your booking request and will contact you within 24 hours to confirm availability and finalize the details.
+      </p>
+      
+      <div class="next-steps">
+        <h2>What Happens Next?</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Confirmation Email</h3>
+              <p>You'll receive an email confirming your request details within a few minutes.</p>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Availability Check</h3>
+              <p>We'll check our schedule and confirm availability for your preferred dates.</p>
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Final Details</h3>
+              <p>We'll contact you within 24 hours with final pricing, location details, and payment information.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-info">
+        <h2>Questions?</h2>
+        <p>If you have any immediate questions, feel free to reach out:</p>
+        <div class="contact-details">
+          <p><strong>Email:</strong> <a href="mailto:letts_do_art@yahoo.com">letts_do_art@yahoo.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+19094558659">(909) 455-8659</a></p>
+        </div>
+      </div>
+      
+      <div class="actions">
+        <a href="/classes" class="btn btn-primary">View Class Information</a>
+        <a href="/" class="btn btn-secondary">Return to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .confirmation-page {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      color: #fff;
+    }
+    
+    .confirmation-content {
+      max-width: 600px;
+      text-align: center;
+      background: #111;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      border: 1px solid #333;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+    
+    .success-icon {
+      margin-bottom: 2rem;
+    }
+    
+    .confirmation-content h1 {
+      color: #ffa500;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .main-message {
+      font-size: 1.2rem;
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+    }
+    
+    .next-steps {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    
+    .next-steps h2 {
+      color: #ffa500;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .step-number {
+      background: #ffa500;
+      color: #000;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .step-content h3 {
+      color: #ffa500;
+      margin-bottom: 0.5rem;
+    }
+    
+    .step-content p {
+      color: #ccc;
+      margin: 0;
+    }
+    
+    .contact-info {
+      background: #000;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    
+    .contact-info h2 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-info p {
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .contact-details a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+    
+    .contact-details a:hover {
+      text-decoration: underline;
+    }
+    
+    .actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.25s;
+      display: inline-block;
+    }
+    
+    .btn-primary {
+      background: #ffa500;
+      color: #fff;
+    }
+    
+    .btn-primary:hover {
+      background: #e6940a;
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: #ffa500;
+      border: 2px solid #ffa500;
+    }
+    
+    .btn-secondary:hover {
+      background: #ffa500;
+      color: #fff;
+    }
+    
+    @media (max-width: 768px) {
+      .confirmation-content {
+        padding: 2rem 1rem;
+      }
+      
+      .confirmation-content h1 {
+        font-size: 2rem;
+      }
+      
+      .actions {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+      }
+    }
+  </style>
+</Layout>

@@ -1,9 +1,334 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 ---
+
 <Layout pageTitle="Book a Class">
-  <main style="padding:2rem; text-align:center; color:#fff;">
-    <h2>Book a Class</h2>
-    <p>Coming soon.</p>
+  <main class="class-booking-page">
+    <h2>Book a Textile Arts Class</h2>
+    <p class="intro">Learn the art of textile creation with hands-on workshops and personalized instruction.</p>
+    
+    <div class="booking-section">
+      <div class="class-info">
+        <h3>Class Options</h3>
+        <div class="class-types">
+          <div class="class-option">
+            <h4>Introduction to Textile Arts</h4>
+            <ul>
+              <li>Duration: 2 hours</li>
+              <li>Group size: 4-8 people</li>
+              <li>Materials included</li>
+              <li>Price: $75 per person</li>
+            </ul>
+          </div>
+          
+          <div class="class-option">
+            <h4>Advanced Techniques Workshop</h4>
+            <ul>
+              <li>Duration: 4 hours</li>
+              <li>Group size: 2-6 people</li>
+              <li>Materials included</li>
+              <li>Price: $150 per person</li>
+            </ul>
+          </div>
+          
+          <div class="class-option">
+            <h4>Private Session</h4>
+            <ul>
+              <li>Duration: Flexible</li>
+              <li>One-on-one instruction</li>
+              <li>Customized curriculum</li>
+              <li>Price: $200 per session</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="booking-form">
+        <h3>Request a Class</h3>
+        <form action="https://formspree.io/f/meolprpw" method="post" class="class-form">
+          <input type="hidden" name="form-type" value="class-booking" />
+          <input type="hidden" name="_next" value="http://localhost:4321/classes/booking-confirmation" />
+          
+          <div class="form-section">
+            <h4>Class Selection</h4>
+            <div class="form-row">
+              <label for="class-type">Class Type *</label>
+              <select id="class-type" name="class-type" required>
+                <option value="">Select a class type</option>
+                <option value="intro">Introduction to Textile Arts - $75</option>
+                <option value="advanced">Advanced Techniques Workshop - $150</option>
+                <option value="private">Private Session - $200</option>
+                <option value="custom">Custom Workshop (quote needed)</option>
+              </select>
+            </div>
+            
+            <div class="form-row">
+              <label for="group-size">Expected Group Size</label>
+              <select id="group-size" name="group-size">
+                <option value="">Select group size</option>
+                <option value="1">Just me (private session)</option>
+                <option value="2-3">2-3 people</option>
+                <option value="4-6">4-6 people</option>
+                <option value="7-10">7-10 people</option>
+                <option value="10+">10+ people (special arrangement)</option>
+              </select>
+            </div>
+            
+            <div class="form-row">
+              <label for="preferred-dates">Preferred Dates/Times</label>
+              <textarea id="preferred-dates" name="preferred-dates" rows="3" placeholder="Let us know your preferred dates, times, and any scheduling preferences..."></textarea>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h4>Contact Information</h4>
+            <div class="form-row">
+              <label for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" name="contact-name" required />
+            </div>
+            
+            <div class="form-row">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            
+            <div class="form-row">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h4>Location & Logistics</h4>
+            <div class="form-row">
+              <label for="location-preference">Location Preference</label>
+              <select id="location-preference" name="location-preference">
+                <option value="">Select location option</option>
+                <option value="studio">Artist's Studio</option>
+                <option value="your-location">Your Location (travel fee may apply)</option>
+                <option value="neutral">Neutral Venue (to be arranged)</option>
+                <option value="virtual">Virtual Session</option>
+              </select>
+            </div>
+            
+            <div class="form-row">
+              <label for="address">Address (if requesting class at your location)</label>
+              <input type="text" id="address" name="address" placeholder="Full address if hosting at your location" />
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h4>Additional Information</h4>
+            <div class="form-row">
+              <label for="experience-level">Experience Level</label>
+              <select id="experience-level" name="experience-level">
+                <option value="">Select experience level</option>
+                <option value="beginner">Complete Beginner</option>
+                <option value="some">Some Experience</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+            
+            <div class="form-row">
+              <label for="special-requests">Special Requests or Goals</label>
+              <textarea id="special-requests" name="special-requests" rows="4" placeholder="Tell us about your goals, any specific techniques you'd like to learn, accessibility needs, or other special requests..."></textarea>
+            </div>
+          </div>
+          
+          <button type="submit" class="submit-btn">Request Class Booking</button>
+          
+          <p class="booking-info">
+            After submitting, you'll receive an email with availability, final pricing, and next steps for booking your class.
+          </p>
+        </form>
+      </div>
+    </div>
+    
+    <div class="contact-section">
+      <h3>Questions About Classes?</h3>
+      <p>Contact us directly: <a href="mailto:letts_do_art@yahoo.com">letts_do_art@yahoo.com</a></p>
+      <p>Or call: <a href="tel:+19094558659">(909) 455-8659</a></p>
+    </div>
   </main>
+
+  <style>
+    .class-booking-page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      color: #fff;
+    }
+    
+    .class-booking-page h2 {
+      text-align: center;
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+    
+    .intro {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 3rem;
+    }
+    
+    .booking-section {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .class-info h3 {
+      color: #ffa500;
+      margin-bottom: 1.5rem;
+    }
+    
+    .class-types {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .class-option {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+    
+    .class-option h4 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+    
+    .class-option ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .class-option li {
+      padding: 0.3rem 0;
+      color: #ccc;
+    }
+    
+    .class-option li:before {
+      content: "• ";
+      color: #ffa500;
+      font-weight: bold;
+    }
+    
+    .booking-form h3 {
+      color: #ffa500;
+      margin-bottom: 1.5rem;
+    }
+    
+    .class-form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .form-section {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+    
+    .form-section h4 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .form-row label {
+      font-weight: bold;
+      color: #fff;
+    }
+    
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      padding: 0.75rem;
+      border: 2px solid #333;
+      border-radius: 4px;
+      background: #000;
+      color: #fff;
+      font-size: 1rem;
+    }
+    
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      outline: none;
+      border-color: #ffa500;
+    }
+    
+    .submit-btn {
+      background: #ffa500;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 1.2rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.25s;
+    }
+    
+    .submit-btn:hover {
+      background: #e6940a;
+    }
+    
+    .booking-info {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+      background: #111;
+      padding: 1rem;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+    
+    .contact-section {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      border-radius: 8px;
+    }
+    
+    .contact-section h3 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-section a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+    
+    .contact-section a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .booking-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .class-booking-page {
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
 </Layout>
