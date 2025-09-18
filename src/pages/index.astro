@@ -1,14 +1,67 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
 ---
 
-<Layout>
-  <header style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 480px; background: #111; margin-bottom: 2rem; overflow: hidden;">
+<Layout
+  pageTitle="Home"
+  description="Discover Talking Textiles Gallery - celebrating artists, stories, and culture through fabric and form. Explore our collection of textile art, book exhibitions, and join our creative workshops."
+  keywords="textile art gallery, fabric art, African American artists, cultural art, textile exhibitions, art workshops, fabric storytelling, contemporary textile art"
+  image="/images/AnthCover.jpg"
+  structuredData={{
+    "@type": "ArtGallery",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Textile Art Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Art Exhibitions",
+            "description": "Professional exhibition booking and display services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Textile Art Classes",
+            "description": "Hands-on workshops teaching textile art techniques"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "Talking Textiles Anthology",
+            "description": "Premium art book featuring textile artists and their stories"
+          }
+        }
+      ]
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "California, United States"
+    },
+    "priceRange": "$$"
+  }}
+>
+  <SEO
+    title="Home"
+    description="Welcome to Talking Textiles Gallery - where fabric tells stories and art connects cultures."
+    keywords="textile art, fabric art, gallery, exhibitions, workshops, cultural art, African American art"
+    section="homepage"
+    tags={["textile art", "fabric art", "gallery", "exhibitions", "workshops", "cultural art"]}
+  />
+
+  <header style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; height: 480px; background: #111; margin-bottom: 2rem; overflow: hidden;" role="banner">
     <link rel="preload" as="image" href="/images/hero/Angela_Davis-1600.webp" />
     <link rel="preload" as="image" href="/images/hero/Cynthia-1600.webp" />
-    <img id="hero-slideshow-1" src="/images/hero/Angela_Davis-1600.webp" alt="Gallery Slideshow" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 2;" />
-    <img id="hero-slideshow-2" src="/images/hero/Angela_Davis-1600.webp" alt="Gallery Slideshow" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 1;" />
+    <img id="hero-slideshow-1" src="/images/hero/Angela_Davis-1600.webp" alt="Featured textile artwork from Talking Textiles Gallery collection" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 2;" />
+    <img id="hero-slideshow-2" src="/images/hero/Angela_Davis-1600.webp" alt="Featured textile artwork from Talking Textiles Gallery collection" style="width: 100vw; height: 100%; object-fit: cover; border-radius: 0; box-shadow: none; display: block; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1); z-index: 1;" />
   </header>
+
   <script type="text/javascript">
     const images = [
       "/images/hero/Angela_Davis-1600.webp",
@@ -74,6 +127,17 @@ import Layout from '../layouts/Layout.astro';
     }
     setInterval(crossfadeToNext, 6000);
   </script>
+
+  <main style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;" role="main">
+    <h1 style="color: #fff; text-align: center; font-size: 2.8rem; margin-bottom: 1rem; letter-spacing: 0.02em;">Welcome to Talking Textiles Gallery</h1>
+    <p style="color: #fff; text-align: center; font-size: 1.35rem; max-width: 600px; margin: 0 auto 1.5rem auto;">Discover artists, stories, and culture through fabric and form. Explore our collection of textile art, book exhibitions, and join our creative workshops.</p>
+
+    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+      <a href="/gallery" style="background: #ffa500; color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: bold; transition: background 0.25s;" aria-label="Browse our textile art gallery">View Gallery</a>
+      <a href="/show/book" style="background: transparent; color: #ffa500; text-decoration: none; padding: 0.75rem 1.5rem; border: 2px solid #ffa500; border-radius: 4px; font-weight: bold; transition: all 0.25s;" aria-label="Book an exhibition at our gallery">Book the Show</a>
+    </div>
+  </main>
+</Layout>
 
   <main style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;">
     <h1 style="color: #fff; text-align: center; font-size: 2.8rem; margin-bottom: 1rem; letter-spacing: 0.02em;">Welcome to Talking Textiles</h1>

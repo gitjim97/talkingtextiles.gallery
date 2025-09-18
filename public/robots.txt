@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
 
+# Block access to sensitive directories
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /scripts/
+
+# Allow access to CSS, JS, and images
+Allow: /styles/
+Allow: /js/
+Allow: /images/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap
 Sitemap: https://talkingtextiles.gallery/sitemap-index.xml

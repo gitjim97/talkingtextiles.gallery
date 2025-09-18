@@ -3,18 +3,95 @@ import "../styles/global.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
-interface Props { pageTitle?: string }
-const { pageTitle } = Astro.props as Props;
+interface Props {
+  pageTitle?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  type?: string;
+  structuredData?: object;
+}
+const {
+  pageTitle,
+  description = "Talking Textiles Gallery: Celebrating artists, stories, and culture through fabric and form. Explore our collection of textile art, book classes, and view exhibitions.",
+  keywords = "textile art, fabric art, gallery, artists, exhibitions, classes, workshops, cultural art, African American art, storytelling through fabric",
+  image = "/images/AnthCover.jpg",
+  type = "website",
+  structuredData
+} = Astro.props as Props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteName = "Talking Textiles Gallery";
+const fullTitle = pageTitle ? `${pageTitle} | ${siteName}` : siteName;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{pageTitle ? `${pageTitle} | Talking Textiles` : "Talking Textiles Gallery"}</title>
+    <title>{fullTitle}</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content={fullTitle} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Talking Textiles Gallery" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
     <meta name="theme-color" content="#ffa500" />
-    <meta name="description" content="Talking Textiles Gallery: artists, stories, and culture through fabric and form." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={fullTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    <!-- Additional SEO -->
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="geo.region" content="US-CA" />
+    <meta name="geo.placename" content="California" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ArtGallery",
+      "name": siteName,
+      "description": description,
+      "url": Astro.site,
+      "logo": new URL("/favicon.svg", Astro.site),
+      "image": new URL(image, Astro.site),
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-909-455-8659",
+        "email": "letts_do_art@yahoo.com",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        // Add social media URLs here when available
+      ],
+      ...structuredData
+    })} />
+
+    <!-- Preload critical resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   </head>
   <body style="min-height: 100vh; display: flex; flex-direction: column;">
     <Nav />
@@ -23,5 +100,4 @@ const { pageTitle } = Astro.props as Props;
     </div>
     <Footer />
   </body>
-  
 </html>

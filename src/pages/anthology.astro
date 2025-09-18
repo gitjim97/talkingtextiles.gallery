@@ -1,42 +1,329 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
 ---
 
-<Layout pageTitle="Anthology">
+<Layout
+  pageTitle="Anthology"
+  description="Order the Talking Textiles Anthology - a premium hardcover collection featuring textile art from talented artists. Each page tells a story through fabric and cultural expression."
+  keywords="textile art book, anthology, hardcover book, fabric art collection, artists book, cultural art book, textile artists"
+  image="/images/AnthCover.jpg"
+  structuredData={{
+    "@type": "Product",
+    "name": "Talking Textiles Anthology",
+    "description": "Premium hardcover collection of textile art featuring stories through fabric and cultural expression",
+    "image": "/images/AnthCover.jpg",
+    "brand": {
+      "@type": "Brand",
+      "name": "Talking Textiles Gallery"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "35.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Talking Textiles Gallery"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "1"
+    }
+  }}
+>
+  <SEO
+    title="Anthology"
+    description="Purchase the Talking Textiles Anthology - a beautiful hardcover book featuring textile art from talented artists, celebrating stories told through fabric and cultural expression."
+    keywords="textile art book, anthology, hardcover, fabric art collection, artists book"
+    section="products"
+    tags={["book", "anthology", "textile art", "hardcover", "fabric art", "cultural art"]}
+  />
+
   <main class="anthology-page">
-    <h2>Order the Talking Textiles Anthology</h2>
-    <p>Get your hardcover copy of the show! Limited quantities available.</p>
-    <div class="anthology-book-section">
-  <img src="/images/AnthCover.jpg" alt="Anthology Book Cover" style="width:180px; height:240px; object-fit:cover; border-radius:8px; margin-bottom:1rem; box-shadow:0 4px 16px rgba(0,0,0,0.18);" />
-  <a href="/classes/book" style="background: orange; color: #fff; border: none; border-radius: 4px; padding: 0.7rem 2rem; font-size: 1.1rem; font-weight: bold; text-decoration: none; display: inline-block; transition: background 0.25s;">Purchase Book - $35</a>
+    <header>
+      <h1>Talking Textiles Anthology</h1>
+      <p class="anthology-subtitle">A premium hardcover collection celebrating textile art and cultural storytelling</p>
+    </header>
+
+    <div class="anthology-content">
+      <section class="book-showcase">
+        <div class="book-cover">
+          <img src="/images/AnthCover.jpg" alt="Talking Textiles Anthology book cover - Premium hardcover featuring textile art collection" width="240" height="320" loading="eager" decoding="async" />
+        </div>
+
+        <div class="book-details">
+          <h2>About the Anthology</h2>
+          <p>The <strong>Talking Textiles Anthology</strong> is a beautifully crafted hardcover book that brings together the work of talented textile artists. Each page tells a unique story through fabric, thread, and creative expression, celebrating cultural heritage and artistic innovation.</p>
+
+          <div class="book-features">
+            <h3>Book Features</h3>
+            <ul>
+              <li>Premium hardcover design</li>
+              <li>Full-color artwork throughout</li>
+              <li>Artist profiles and stories</li>
+              <li>Cultural and historical context</li>
+              <li>High-quality printing on premium paper</li>
+              <li>Limited edition collector's item</li>
+            </ul>
+          </div>
+
+          <div class="pricing-section">
+            <div class="price">Only $35.00</div>
+            <p class="shipping-info">Plus shipping & handling</p>
+            <a href="/classes/book" class="purchase-btn" aria-label="Purchase the Talking Textiles Anthology book">Purchase Book</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="book-description">
+        <h2>Why Choose Our Anthology?</h2>
+        <div class="description-grid">
+          <div class="description-item">
+            <h3>Authentic Stories</h3>
+            <p>Each artwork included in this anthology represents authentic voices from the textile art community, sharing personal and cultural narratives through fabric.</p>
+          </div>
+
+          <div class="description-item">
+            <h3>Quality Craftsmanship</h3>
+            <p>Printed on premium paper with attention to detail, this book showcases the intricate beauty of textile art in stunning full color.</p>
+          </div>
+
+          <div class="description-item">
+            <h3>Cultural Preservation</h3>
+            <p>By collecting these stories, we help preserve cultural heritage and artistic traditions for future generations.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <h2>Ready to Add This to Your Collection?</h2>
+        <p>Join the growing community of textile art enthusiasts who own this special anthology.</p>
+        <a href="/classes/book" class="cta-btn">Order Your Copy Today</a>
+      </section>
     </div>
-     </main>
+  </main>
   <style>
     .anthology-page {
-      max-width: 600px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 1rem;
       color: #fff;
+    }
+
+    .anthology-page header {
       text-align: center;
+      margin-bottom: 3rem;
     }
-    .anthology-book-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 2rem;
-    }
-    .anthology-book-section a:hover {
-      background: #e6940a !important;
-    }
-    .book-image-placeholder {
+
+    .anthology-page h1 {
+      color: #ffa500;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
+
+    .anthology-subtitle {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .book-showcase {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      align-items: start;
+    }
+
+    .book-cover img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(255, 165, 0, 0.3);
+    }
+
+    .book-details h2 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+
+    .book-details p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .book-features h3 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+
+    .book-features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .book-features li {
+      color: #ccc;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .book-features li:before {
+      content: "✓ ";
+      color: #ffa500;
+      font-weight: bold;
+    }
+
+    .pricing-section {
+      background: #111;
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid #333;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffa500;
+      margin-bottom: 0.5rem;
+    }
+
+    .shipping-info {
+      color: #ccc;
+      margin-bottom: 1.5rem;
+    }
+
+    .purchase-btn {
+      background: #ffa500;
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: background 0.25s;
+    }
+
+    .purchase-btn:hover {
+      background: #e6940a;
+    }
+
+    .book-description {
+      margin-bottom: 4rem;
+    }
+
+    .book-description h2 {
+      color: #ffa500;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .description-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .description-item {
+      background: #111;
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid #333;
+    }
+
+    .description-item h3 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+
+    .description-item p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      background: linear-gradient(135deg, #111 0%, #222 100%);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid #333;
+    }
+
+    .cta-section h2 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      color: #ccc;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      background: #ffa500;
+      color: #fff;
+      text-decoration: none;
+      padding: 1.2rem 3rem;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      display: inline-block;
+      transition: all 0.25s;
+    }
+
+    .cta-btn:hover {
+      background: #e6940a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(255, 165, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .book-showcase {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .book-cover img {
+        max-width: 240px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .anthology-page h1 {
+        font-size: 2rem;
+      }
+
+      .description-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 600px) {
       .anthology-page {
         padding: 1rem 0.5rem;
       }
-      .anthology-book-section {
-        margin-top: 1rem;
+
+      .pricing-section {
+        padding: 1.5rem;
+      }
+
+      .description-item {
+        padding: 1.5rem;
+      }
+
+      .cta-section {
+        padding: 2rem 1rem;
       }
     }
   </style>

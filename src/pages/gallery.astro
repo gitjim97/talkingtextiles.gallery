@@ -1,46 +1,153 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SEO from '../components/SEO.astro';
 ---
 
-<Layout pageTitle="Gallery">
+<Layout
+  pageTitle="Gallery"
+  description="Explore our collection of textile art from talented artists. Each piece tells a unique story through fabric and form, celebrating cultural heritage and artistic expression."
+  keywords="textile art gallery, fabric art collection, artists portfolio, cultural art, African American art, textile artists, fabric storytelling"
+  image="/images/AnthCover.jpg"
+  structuredData={{
+    "@type": "CollectionPage",
+    "name": "Textile Art Gallery",
+    "description": "Collection of textile artworks from diverse artists",
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": "Artist Collection",
+      "numberOfItems": 15,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "VisualArtwork",
+            "name": "Angela Davis Portrait",
+            "creator": "Textile Artist",
+            "artMedium": "Fabric",
+            "artform": "Textile Art"
+          }
+        }
+      ]
+    }
+  }}
+>
+  <SEO
+    title="Gallery"
+    description="Browse our curated collection of textile art pieces from talented artists, each telling unique stories through fabric and cultural expression."
+    keywords="textile art gallery, fabric art collection, artists portfolio, cultural art, African American art"
+    section="gallery"
+    tags={["textile art", "gallery", "artists", "fabric art", "cultural art", "portfolio"]}
+  />
+
   <main class="gallery">
-    <h2>Gallery of Artists</h2>
-    <div class="grid">
-  <a href="/artist_pages/Angela_Davis"><img src="/images/thumbs/Angela_Davis-180.webp" alt="Angela Davis" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/Copy_of_Gravey"><img src="/images/thumbs/Copy_of_Gravey-180.webp" alt="Copy of Gravey" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/lillia_s_mom"><img src="/images/thumbs/Copy_of_Lillia_s_mom-180.webp" alt="Lillia's Mom" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/copy_of_pam_mom_2"><img src="/images/thumbs/Copy_of_pam_mom_2-180.webp" alt="Pam's Mom 2" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/Cynthia"><img src="/images/thumbs/Cynthia-180.webp" alt="Cynthia" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/Daddy"><img src="/images/thumbs/daddy-180.webp" alt="Daddy" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/frans_grand_mother"><img src="/images/thumbs/Frans_grand_mother-180.webp" alt="Frans' Grandmother" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/Jeanneta_art"><img src="/images/thumbs/Jeanneta_art-180.webp" alt="Jeanneta" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/Kamala"><img src="/images/thumbs/Kamala-180.webp" alt="Kamala" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/Malcom_X"><img src="/images/thumbs/Malcom_X-180.webp" alt="Malcom X" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/Mama"><img src="/images/thumbs/mama-180.webp" alt="Mama" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/mrs_annies_nience"><img src="/images/thumbs/Mrs_Annies_Nience-180.webp" alt="Mrs. Annie’s Niece" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/Nigel"><img src="/images/thumbs/Nigel-180.webp" alt="Nigel" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="#"><img src="/images/thumbs/Page 30-180.webp" alt="Page 30" width="180" height="180" loading="lazy" decoding="async" /></a>
-  <a href="/artist_pages/Untitled-1"><img src="/images/thumbs/Untitled-1-180.webp" alt="Untitled" width="180" height="180" loading="lazy" decoding="async" /></a>
+    <header>
+      <h1>Textile Art Gallery</h1>
+      <p class="gallery-intro">Explore our collection of textile artworks, where each piece tells a unique story through fabric and form. Our gallery showcases talented artists celebrating cultural heritage and artistic expression.</p>
+    </header>
+
+    <div class="grid" role="grid" aria-label="Artist portfolio grid">
+      <a href="/artist_pages/Angela_Davis" aria-label="View Angela Davis textile artwork">
+        <img src="/images/thumbs/Angela_Davis-180.webp" alt="Angela Davis - Textile portrait artwork featuring cultural storytelling through fabric" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/Copy_of_Gravey" aria-label="View Gravey textile artwork">
+        <img src="/images/thumbs/Copy_of_Gravey-180.webp" alt="Gravey - Textile art piece showcasing fabric storytelling techniques" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/lillia_s_mom" aria-label="View Lillia's Mom textile artwork">
+        <img src="/images/thumbs/Copy_of_Lillia_s_mom-180.webp" alt="Lillia's Mom - Textile portrait art with cultural significance" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/copy_of_pam_mom_2" aria-label="View Pam's Mom textile artwork">
+        <img src="/images/thumbs/Copy_of_pam_mom_2-180.webp" alt="Pam's Mom - Textile art featuring family heritage through fabric" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/Cynthia" aria-label="View Cynthia textile artwork">
+        <img src="/images/thumbs/Cynthia-180.webp" alt="Cynthia - Contemporary textile art piece" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/Daddy" aria-label="View Daddy textile artwork">
+        <img src="/images/thumbs/daddy-180.webp" alt="Daddy - Textile portrait celebrating family legacy" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/frans_grand_mother" aria-label="View Frans' Grandmother textile artwork">
+        <img src="/images/thumbs/Frans_grand_mother-180.webp" alt="Frans' Grandmother - Textile art honoring family heritage" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/Jeanneta_art" aria-label="View Jeanneta textile artwork">
+        <img src="/images/thumbs/Jeanneta_art-180.webp" alt="Jeanneta - Textile art showcasing artistic expression" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/Kamala" aria-label="View Kamala textile artwork">
+        <img src="/images/thumbs/Kamala-180.webp" alt="Kamala - Textile art piece with cultural storytelling" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/Malcom_X" aria-label="View Malcom X textile artwork">
+        <img src="/images/thumbs/Malcom_X-180.webp" alt="Malcom X - Textile portrait art of historical figure" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/Mama" aria-label="View Mama textile artwork">
+        <img src="/images/thumbs/mama-180.webp" alt="Mama - Textile art celebrating maternal heritage" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/mrs_annies_nience" aria-label="View Mrs. Annie's Niece textile artwork">
+        <img src="/images/thumbs/Mrs_Annies_Nience-180.webp" alt="Mrs. Annie's Niece - Textile art featuring family connections" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/Nigel" aria-label="View Nigel textile artwork">
+        <img src="/images/thumbs/Nigel-180.webp" alt="Nigel - Contemporary textile art piece" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="#" aria-label="Page 30 - Textile art documentation">
+        <img src="/images/thumbs/Page 30-180.webp" alt="Page 30 - Textile art documentation and reference" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
+      <a href="/artist_pages/Untitled-1" aria-label="View Untitled textile artwork">
+        <img src="/images/thumbs/Untitled-1-180.webp" alt="Untitled - Abstract textile art expression" width="180" height="180" loading="lazy" decoding="async" />
+      </a>
     </div>
+
+    <section class="gallery-info" aria-labelledby="gallery-about">
+      <h2 id="gallery-about">About Our Collection</h2>
+      <p>Each artwork in our gallery represents a unique voice in the textile art community. Through fabric, thread, and creative expression, our artists share stories of heritage, culture, and personal experience.</p>
+      <p>Click on any artwork to view it in detail and learn more about the artist and their creative process.</p>
+    </section>
   </main>
   <style>
+    .gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      color: #fff;
+    }
+
+    .gallery header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .gallery h1 {
+      color: #ffa500;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .gallery-intro {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
     .grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
+      margin-bottom: 3rem;
     }
+
     .grid a {
       display: flex;
       flex-direction: column;
       align-items: center;
       transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     }
+
     .grid a:hover, .grid a:focus-visible {
       transform: translateY(-8px) scale(1.07);
       box-shadow: 0 8px 24px rgba(0,0,0,0.18);
       z-index: 2;
     }
+
     @media (pointer: coarse) {
       .grid a:hover, .grid a:focus-visible {
         transform: none;
@@ -51,6 +158,7 @@ import Layout from '../layouts/Layout.astro';
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       }
     }
+
     .grid img {
       width: 100%;
       max-width: 180px;
@@ -60,18 +168,63 @@ import Layout from '../layouts/Layout.astro';
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     }
+
     .grid a:hover img, .grid a:focus-visible img {
       box-shadow: 0 8px 24px rgba(0,0,0,0.18);
     }
+
+    .gallery-info {
+      background: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #333;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .gallery-info h2 {
+      color: #ffa500;
+      margin-bottom: 1rem;
+    }
+
+    .gallery-info p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .gallery-info p:last-child {
+      margin-bottom: 0;
+    }
+
     @media (max-width: 600px) {
+      .gallery {
+        padding: 1rem 0.5rem;
+      }
+
+      .gallery h1 {
+        font-size: 2rem;
+      }
+
+      .gallery-intro {
+        font-size: 1.1rem;
+      }
+
       .grid {
         gap: 0.5rem;
       }
+
       .grid img {
         max-width: 44vw;
         min-width: 120px;
       }
+
+      .gallery-info {
+        padding: 1.5rem 1rem;
+      }
     }
+
     @media (max-width: 400px) {
       .grid img {
         max-width: 90vw;

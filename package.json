@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "img:optimize": "node scripts/optimize-images.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs",
     "postinstall": "npm run img:optimize || echo 'image optimize skipped'"
   },
   "dependencies": {
