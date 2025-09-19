@@ -12,13 +12,9 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      // Custom pages to include
-      customPages: [
-        'https://talkingtextiles.gallery/gallery',
-        'https://talkingtextiles.gallery/anthology',
-        'https://talkingtextiles.gallery/show/book',
-        'https://talkingtextiles.gallery/classes/book'
-      ]
+      // Remove custom pages that are auto-generated to avoid duplicates
+      // Only add truly custom pages not handled by Astro routing
+      customPages: []
     })
   ],
   vite: {
@@ -32,5 +28,7 @@ export default defineConfig({
     service: {
       entrypoint: 'astro/assets/services/sharp'
     }
-  }
+  },
+  // Ensure consistent trailing slash behavior
+  trailingSlash: 'always'
 });
