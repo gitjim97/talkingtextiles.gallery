@@ -1,13 +1,9 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Frans' Grandmother - Gallery</title>
-    <link rel="stylesheet" href="/styles/global.css" />
-  </head>
-  <body style="background:#000 !important; color:#fff;">
-    <a href="/gallery" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
+
+<Layout pageTitle="Frans' Grandmother - Textile Art">
+  <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
     <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
       <!-- <h1>Frans' Grandmother</h1> -->
       <img src="/images/Frans_grand_mother.jpg" alt="Frans' Grandmother Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
@@ -27,5 +23,4 @@
         </p>
       </section> -->
     </main>
-  </body>
-</html>
+</Layout>

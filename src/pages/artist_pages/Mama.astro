@@ -1,14 +1,10 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mama - Gallery</title>
-    <link rel="stylesheet" href="/styles/global.css" />
-  </head>
-  <body style="background:#000 !important; color:#fff;">
-    <a href="/gallery" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
-    <main style="max-width: 800px; margin: 2rem auto;">
+
+<Layout pageTitle="Mama - Textile Art">
+  <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
+    <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
       <!-- <h1>Mama</h1> -->
       <img src="/images/mama.jpg" alt="Mama Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
       <!-- <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem;">
@@ -27,5 +23,4 @@
         </p>
       </section> -->
     </main>
-  </body>
-</html>
+</Layout>

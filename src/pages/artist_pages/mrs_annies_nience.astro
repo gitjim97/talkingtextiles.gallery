@@ -1,17 +1,26 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Mrs. Annie’s Niece - Gallery</title>
-    <link rel="stylesheet" href="/styles/global.css" />
-  </head>
-  <body style="background:#000 !important; color:#fff;">
-    <a href="/gallery" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
+
+<Layout pageTitle="Mrs. Annie's Niece - Textile Art">
+  <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
         <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
       <!-- <h1>Mrs. Annie's Niece</h1> -->
       <img src="/images/Mrs_Annies_Nience.jpg" alt="Mrs. Annie's Niece Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
-      <!-- Text content hidden for now -->
+      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
+        <img src="/images/artists/mrs_annies_nience/profile.jpg" alt="Annie Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" />
+        <div style="flex: 1; min-width: 300px;">
+          <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
+          <p style="line-height: 1.6; color: #fff;">
+            Annie's textile art celebrates family connections and honors the wisdom passed down through generations. Her work reflects the strength and beauty of family bonds.
+          </p>
+        </div>
+      </section>
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">Artwork Information</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          This textile art piece features family connections and celebrates the enduring bonds that unite us across generations, told through fabric and artistic expression.
+        </p>
+      </section>
     </main>
-  </body>
-</html>
+</Layout>
