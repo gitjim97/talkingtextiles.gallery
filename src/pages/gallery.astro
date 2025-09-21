@@ -47,18 +47,21 @@ import SEO from '../components/SEO.astro';
     </header>
 
     <div class="grid" role="grid" aria-label="Artist portfolio grid">
+      <!-- Priority load first 4 images for better LCP -->
       <a href="/artist_pages/Angela_Davis/" aria-label="View Angela Davis textile artwork">
-        <img src="/images/thumbs/Angela_Davis-180.webp" alt="Angela Davis - Textile portrait artwork featuring cultural storytelling through fabric" width="180" height="180" loading="lazy" decoding="async" />
+        <img src="/images/thumbs/Angela_Davis-180.webp" alt="Angela Davis - Textile portrait artwork featuring cultural storytelling through fabric" width="180" height="180" loading="eager" decoding="sync" fetchpriority="high" />
       </a>
       <a href="/artist_pages/Copy_of_Gravey/" aria-label="View Gravey textile artwork">
-        <img src="/images/thumbs/Copy_of_Gravey-180.webp" alt="Gravey - Textile art piece showcasing fabric storytelling techniques" width="180" height="180" loading="lazy" decoding="async" />
+        <img src="/images/thumbs/Copy_of_Gravey-180.webp" alt="Gravey - Textile art piece showcasing fabric storytelling techniques" width="180" height="180" loading="eager" decoding="sync" fetchpriority="high" />
       </a>
       <a href="/artist_pages/lillia_s_mom/" aria-label="View Lillia's Mom textile artwork">
-        <img src="/images/thumbs/Copy_of_Lillia_s_mom-180.webp" alt="Lillia's Mom - Textile portrait art with cultural significance" width="180" height="180" loading="lazy" decoding="async" />
+        <img src="/images/thumbs/Copy_of_Lillia_s_mom-180.webp" alt="Lillia's Mom - Textile portrait art with cultural significance" width="180" height="180" loading="eager" decoding="sync" fetchpriority="high" />
       </a>
       <a href="/artist_pages/copy_of_pam_mom_2/" aria-label="View Pam's Mom textile artwork">
-        <img src="/images/thumbs/Copy_of_pam_mom_2-180.webp" alt="Pam's Mom - Textile art featuring family heritage through fabric" width="180" height="180" loading="lazy" decoding="async" />
+        <img src="/images/thumbs/Copy_of_pam_mom_2-180.webp" alt="Pam's Mom - Textile art featuring family heritage through fabric" width="180" height="180" loading="eager" decoding="sync" fetchpriority="high" />
       </a>
+      
+      <!-- Lazy load remaining images -->
       <a href="/artist_pages/Cynthia/" aria-label="View Cynthia textile artwork">
         <img src="/images/thumbs/Cynthia-180.webp" alt="Cynthia - Contemporary textile art piece" width="180" height="180" loading="lazy" decoding="async" />
       </a>

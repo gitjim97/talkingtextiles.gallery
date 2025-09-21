@@ -1,11 +1,13 @@
+/* Critical CSS - inlined in <head> */
 body {
   background: #000;
   color: #fff;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-@import "tailwindcss";
 
-/* Custom styles for gallery layout */
+/* Critical gallery styles - above the fold */
 .gallery .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -19,4 +21,21 @@ body {
   display: block;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+  will-change: transform;
 }
+
+.gallery .grid img:hover {
+  transform: scale(1.02);
+}
+
+/* Optimize image container for better LCP */
+.gallery .grid a {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+/* Non-critical styles will be loaded later */
+@import "tailwindcss";

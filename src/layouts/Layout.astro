@@ -89,15 +89,72 @@ const fullTitle = pageTitle ? `${pageTitle} | ${siteName}` : siteName;
       ...structuredData
     })} />
 
+    <!-- Critical CSS inline for better FCP -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { 
+        background: #000; 
+        color: #fff; 
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Critical navigation styles */
+      nav { 
+        background: rgba(0,0,0,0.95);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      
+      /* Critical grid layout */
+      .gallery .grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+        gap: 1rem; 
+        padding: 1rem; 
+      }
+    </style>
+
     <!-- Preload critical resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    
+    <!-- Resource hints for performance -->
+    <link rel="preload" href="/images/thumbs/Angela_Davis-180.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/images/thumbs/Copy_of_Gravey-180.webp" as="image" type="image/webp" />
+    
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="/src/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/src/styles/global.css"></noscript>
   </head>
   <body style="min-height: 100vh; display: flex; flex-direction: column;">
+    <!-- Service Worker Registration for Performance -->
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('SW registered: ', registration);
+            })
+            .catch(registrationError => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    
     <Nav />
     <div style="flex: 1 0 auto;">
       <slot />
     </div>
     <Footer />
+    
+    <!-- Performance optimizations script -->
+    <script src="/js/performance.js" async></script>
   </body>
 </html>

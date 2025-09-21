@@ -18,16 +18,28 @@ export default defineConfig({
     })
   ],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      cssCodeSplit: false, // Inline critical CSS
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'critical': ['./src/styles/global.css']
+          }
+        }
+      }
+    }
   },
   compressHTML: true,
   build: {
-    inlineStylesheets: 'auto'
+    inlineStylesheets: 'auto',
+    assets: '_assets'
   },
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
-    }
+    },
+    domains: ['talkingtextiles.gallery']
   },
   // Ensure consistent trailing slash behavior
   trailingSlash: 'always'

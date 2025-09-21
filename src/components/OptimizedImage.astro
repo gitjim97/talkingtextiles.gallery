@@ -1,0 +1,56 @@
+---
+// Component for serving optimized images with modern formats
+interface Props {
+  src: string;
+  alt: string;
+  width?: number | string;
+  height?: number | string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'sync' | 'async' | 'auto';
+  sizes?: string;
+  class?: string;
+  style?: string;
+  priority?: boolean;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  loading = 'lazy',
+  decoding = 'async',
+  sizes,
+  class: className,
+  style,
+  priority = false
+} = Astro.props as Props;
+
+// Generate WebP and AVIF versions
+const basePath = src.replace(/\.[^/.]+$/, '');
+const extension = src.split('.').pop();
+const avifSrc = `${basePath}.avif`;
+const webpSrc = `${basePath}.webp`;
+---
+
+<picture>
+  <!-- AVIF format for modern browsers (best compression) -->
+  <source srcset={avifSrc} type="image/avif" />
+  
+  <!-- WebP format for good compression -->
+  <source srcset={webpSrc} type="image/webp" />
+  
+  <!-- Fallback to original format -->
+  <img 
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={priority ? 'eager' : loading}
+    decoding={decoding}
+    sizes={sizes}
+    class={className}
+    style={style}
+    fetchpriority={priority ? 'high' : 'auto'}
+  />
+</picture>
