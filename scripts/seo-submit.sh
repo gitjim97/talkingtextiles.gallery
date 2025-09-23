@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Quick SEO Submission Script for Talking Textiles Gallery
+# Run this after setting up Google Search Console and Bing Webmaster Tools
+
+echo "🎨 Talking Textiles Gallery - SEO Submission Helper"
+echo "=================================================="
+echo ""
+
+# Key URLs to submit for indexing
+SITE_URL="https://talkingtextiles.gallery"
+
+echo "📋 Key URLs to submit to search engines:"
+echo ""
+echo "1. Homepage: ${SITE_URL}/"
+echo "2. Gallery: ${SITE_URL}/gallery/"
+echo "3. Classes: ${SITE_URL}/classes/book/"
+echo "4. Show Booking: ${SITE_URL}/show/book/"
+echo "5. Show Photos: ${SITE_URL}/show/photos/"
+echo "6. Class Photos: ${SITE_URL}/classes/photos/"
+echo "7. Anthology: ${SITE_URL}/anthology/"
+echo ""
+
+echo "🎯 Artist Pages to Submit:"
+echo ""
+echo "- ${SITE_URL}/artist_pages/Angela_Davis/"
+echo "- ${SITE_URL}/artist_pages/Cynthia/"
+echo "- ${SITE_URL}/artist_pages/Kamala/"
+echo "- ${SITE_URL}/artist_pages/Malcom_X/"
+echo "- ${SITE_URL}/artist_pages/Mama/"
+echo "- ${SITE_URL}/artist_pages/Daddy/"
+echo "- ${SITE_URL}/artist_pages/Nigel/"
+echo "- ${SITE_URL}/artist_pages/Jeanneta_art/"
+echo "- ${SITE_URL}/artist_pages/Copy_of_Gravey/"
+echo "- ${SITE_URL}/artist_pages/frans_grand_mother/"
+echo "- ${SITE_URL}/artist_pages/lillia_s_mom/"
+echo "- ${SITE_URL}/artist_pages/copy_of_pam_mom_2/"
+echo "- ${SITE_URL}/artist_pages/mrs_annies_nience/"
+echo "- ${SITE_URL}/artist_pages/Page_30/"
+echo "- ${SITE_URL}/artist_pages/Untitled-1/"
+echo ""
+
+echo "🔗 Sitemap URL:"
+echo "${SITE_URL}/sitemap-index.xml"
+echo ""
+
+echo "📊 Next Steps:"
+echo ""
+echo "1. Go to Google Search Console (search.google.com/search-console)"
+echo "2. Add property: ${SITE_URL}"
+echo "3. Verify ownership"
+echo "4. Submit sitemap: ${SITE_URL}/sitemap-index.xml"
+echo "5. Request indexing for each URL above"
+echo ""
+echo "6. Go to Bing Webmaster Tools (bing.com/webmasters)" 
+echo "7. Add site: ${SITE_URL}"
+echo "8. Submit sitemap and request crawling"
+echo ""
+
+echo "💡 Pro Tips:"
+echo "- Create Google My Business listing"
+echo "- Share website on social media"
+echo "- Add to local art directory listings"
+echo "- Get links from local art organizations"
+echo ""
+
+echo "⏰ Expected timeline: 2-8 weeks for initial indexing"
+echo "📈 Full SEO results: 3-6 months"
+echo ""
+echo "✅ Your website is already SEO-optimized!"
+echo "   Now it just needs to be discovered by search engines."
