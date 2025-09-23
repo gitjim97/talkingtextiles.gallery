@@ -128,7 +128,7 @@ import SEO from '../components/SEO.astro';
     setInterval(crossfadeToNext, 6000);
   </script>
 
-  <main style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;" role="main">
+  <main style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px; position: relative; z-index: 10; background: rgba(0,0,0,0.7); padding: 2rem; margin: -200px auto 0 auto; max-width: 800px; border-radius: 8px;" role="main">
     <h1 style="color: #fff; text-align: center; font-size: 2.8rem; margin-bottom: 1rem; letter-spacing: 0.02em;">Welcome to Talking Textiles Gallery</h1>
     <p style="color: #fff; text-align: center; font-size: 1.35rem; max-width: 600px; margin: 0 auto 1.5rem auto;">Discover artists, stories, and culture through fabric and form. Explore our collection of textile art, book exhibitions, and join our creative workshops.</p>
 
@@ -136,17 +136,5 @@ import SEO from '../components/SEO.astro';
       <a href="/gallery/" style="background: #ffa500; color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: bold; transition: background 0.25s;" aria-label="Browse our textile art gallery">View Gallery</a>
       <a href="/show/book/" style="background: transparent; color: #ffa500; text-decoration: none; padding: 0.75rem 1.5rem; border: 2px solid #ffa500; border-radius: 4px; font-weight: bold; transition: all 0.25s;" aria-label="Book an exhibition at our gallery">Book the Show</a>
     </div>
-  </main>
-</Layout>
-
-  <main style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px;">
-    <h1 style="color: #fff; text-align: center; font-size: 2.8rem; margin-bottom: 1rem; letter-spacing: 0.02em;">Welcome to Talking Textiles</h1>
-    <p style="color: #fff; text-align: center; font-size: 1.35rem; max-width: 600px; margin: 0 auto 1.5rem auto;">Discover artists, stories, and culture through fabric and form.</p>
-    
-    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-      <a href="/gallery/" style="background: #ffa500; color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: bold; transition: background 0.25s;">View Gallery</a>
-      <a href="/show/book/" style="background: transparent; color: #ffa500; text-decoration: none; padding: 0.75rem 1.5rem; border: 2px solid #ffa500; border-radius: 4px; font-weight: bold; transition: all 0.25s;">Book the Show</a>
-    </div>
-    <!-- Gallery Images section removed as requested -->
   </main>
 </Layout>

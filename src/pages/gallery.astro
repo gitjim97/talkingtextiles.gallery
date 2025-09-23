@@ -130,49 +130,53 @@ import SEO from '../components/SEO.astro';
       line-height: 1.6;
     }
 
-    .grid {
-      display: flex;
+    .gallery .grid {
+      display: flex !important;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
       margin-bottom: 3rem;
+      padding: 0;
     }
 
-    .grid a {
-      display: flex;
+    .gallery .grid a {
+      display: flex !important;
       flex-direction: column;
       align-items: center;
       transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+      aspect-ratio: auto !important;
+      overflow: visible !important;
     }
 
-    .grid a:hover, .grid a:focus-visible {
+    .gallery .grid a:hover, .gallery .grid a:focus-visible {
       transform: translateY(-8px) scale(1.07);
       box-shadow: 0 8px 24px rgba(0,0,0,0.18);
       z-index: 2;
     }
 
     @media (pointer: coarse) {
-      .grid a:hover, .grid a:focus-visible {
+      .gallery .grid a:hover, .gallery .grid a:focus-visible {
         transform: none;
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         z-index: auto;
       }
-      .grid a:hover img, .grid a:focus-visible img {
+      .gallery .grid a:hover img, .gallery .grid a:focus-visible img {
         box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       }
     }
 
-    .grid img {
-      width: 100%;
+    .gallery .grid img {
+      width: 100% !important;
       max-width: 180px;
-      height: auto;
+      height: auto !important;
       object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+      display: block !important;
     }
 
-    .grid a:hover img, .grid a:focus-visible img {
+    .gallery .grid a:hover img, .gallery .grid a:focus-visible img {
       box-shadow: 0 8px 24px rgba(0,0,0,0.18);
     }
 

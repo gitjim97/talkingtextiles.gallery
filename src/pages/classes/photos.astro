@@ -1,9 +1,153 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 ---
-<Layout pageTitle="Class Photos">
-  <main style="padding:2rem; text-align:center; color:#fff;">
-    <h2>Class Photos</h2>
-    <p>Coming soon.</p>
+
+<Layout 
+  pageTitle="Class Photos"
+  description="View photos from our textile art classes and workshops. See students learning various techniques and creating beautiful fabric art pieces."
+  keywords="textile art classes, fabric art workshops, learning textiles, student work, class photos"
+>
+  <main class="gallery">
+    <header style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="color: #ffa500; font-size: 2.5rem; margin-bottom: 1rem;">Class Photos</h1>
+      <p style="color: #ccc; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+        Explore moments from our textile art classes and workshops. See our students learning, creating, and celebrating their artistic journey.
+      </p>
+    </header>
+
+    <div class="grid" id="class-photos-grid">
+      <Image src="/images/classes/Annie.jpg" alt="Annie in textile art class" width={320} height={320} loading="eager" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+      <Image src="/images/classes/Cynthia.jpg" alt="Cynthia working on textile project" width={320} height={320} loading="lazy" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+      <Image src="/images/classes/Jan.jpg" alt="Jan creating fabric art" width={320} height={320} loading="lazy" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+      <Image src="/images/classes/Jeanet.jpg" alt="Jeanet in textile workshop" width={320} height={320} loading="lazy" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+      <Image src="/images/classes/Pam.jpg" alt="Pam learning textile techniques" width={320} height={320} loading="lazy" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+      <Image src="/images/classes/Robert.jpg" alt="Robert participating in class" width={320} height={320} loading="lazy" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+      <Image src="/images/classes/Sundai.jpg" alt="Sundai working with textiles" width={320} height={320} loading="lazy" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+      <Image src="/images/classes/unnamed-2.jpg" alt="Students collaborating on textile project" width={320} height={320} loading="lazy" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+      <Image src="/images/classes/unnamed-4.jpg" alt="Class working session" width={320} height={320} loading="lazy" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+      <Image src="/images/classes/unnamed.jpg" alt="Textile art class in session" width={320} height={320} loading="lazy" class="class-img" format="webp" quality={70} sizes="(max-width: 600px) 44vw, 220px" />
+    </div>
+
+    <!-- Lightbox for viewing larger images -->
+    <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.95); align-items:center; justify-content:center; z-index:1000; flex-direction:column;">
+      <button id="close-lightbox" style="position:absolute; top:2rem; right:2rem; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; padding: 0.5rem;" aria-label="Close lightbox">&times;</button>
+      <button id="prev-img" style="position:absolute; left:2rem; top:50%; transform:translateY(-50%); background:none; border:none; color:#fff; font-size:3rem; cursor:pointer; padding: 0.5rem;" aria-label="Previous image">&#8592;</button>
+      <img id="lightbox-img" src="" alt="Large view" style="max-width:90vw; max-height:80vh; border-radius:1rem; box-shadow:0 4px 32px rgba(0,0,0,0.5);" />
+      <button id="next-img" style="position:absolute; right:2rem; top:50%; transform:translateY(-50%); background:none; border:none; color:#fff; font-size:3rem; cursor:pointer; padding: 0.5rem;" aria-label="Next image">&#8594;</button>
+    </div>
+
+    <script type="text/javascript">
+      // Lightbox functionality for class photos
+      function initializeLightbox() {
+        const images = Array.from(document.querySelectorAll('.class-img'));
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-lightbox');
+        const prevBtn = document.getElementById('prev-img');
+        const nextBtn = document.getElementById('next-img');
+        let currentIdx = 0;
+        
+        if (images.length === 0) return; // No images to display
+        
+        const imgSrcs = images.map(img => img.src);
+        
+        images.forEach((img, idx) => {
+          img.style.cursor = 'pointer';
+          img.addEventListener('click', () => {
+            currentIdx = idx;
+            lightboxImg.src = imgSrcs[currentIdx];
+            lightbox.style.display = 'flex';
+          });
+        });
+        
+        function showImg(idx) {
+          currentIdx = (idx + imgSrcs.length) % imgSrcs.length;
+          lightboxImg.src = imgSrcs[currentIdx];
+        }
+        
+        prevBtn.addEventListener('click', () => showImg(currentIdx - 1));
+        nextBtn.addEventListener('click', () => showImg(currentIdx + 1));
+        
+        closeBtn.addEventListener('click', () => {
+          lightbox.style.display = 'none';
+          lightboxImg.src = '';
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+          }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+          if (lightbox.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') showImg(currentIdx - 1);
+            if (e.key === 'ArrowRight') showImg(currentIdx + 1);
+            if (e.key === 'Escape') {
+              lightbox.style.display = 'none';
+              lightboxImg.src = '';
+            }
+          }
+        });
+      }
+      
+      // Initialize when DOM is ready
+      document.addEventListener('DOMContentLoaded', initializeLightbox);
+    </script>
+
+    <style>
+      .gallery {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        color: #fff;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+      
+      .grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+        cursor: pointer;
+        aspect-ratio: 1;
+      }
+      
+      .grid img:hover, .grid img:focus-visible {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+        transform: translateY(-8px) scale(1.02);
+        z-index: 2;
+      }
+
+      @media (max-width: 600px) {
+        .gallery {
+          padding: 1rem 0.5rem;
+        }
+        
+        .grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 0.5rem;
+        }
+      }
+
+      code {
+        background: #333;
+        color: #ffa500;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+    </style>
   </main>
 </Layout>
