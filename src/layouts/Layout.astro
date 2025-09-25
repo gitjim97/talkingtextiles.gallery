@@ -129,8 +129,9 @@ const fullTitle = pageTitle ? `${pageTitle} | ${siteName}` : siteName;
     <link rel="preload" href="/images/thumbs/Copy_of_Gravey-180.webp" as="image" type="image/webp" />
     
     <!-- Load non-critical CSS asynchronously -->
-    <link rel="preload" href="/src/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/src/styles/global.css"></noscript>
+  <!-- Load global stylesheet from public for consistent production path -->
+  <link rel="preload" href="/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/styles/global.css"></noscript>
   </head>
   <body style="min-height: 100vh; display: flex; flex-direction: column;">
     <!-- Service Worker Registration for Performance -->
