@@ -110,6 +110,14 @@ const fullTitle = pageTitle ? `${pageTitle} | ${siteName}` : siteName;
         top: 0;
         z-index: 100;
       }
+      /* Fallback nav link + dropdown minimal styling (in case external CSS fails) */
+      nav .nav-link {color:#fff;font-weight:600;text-decoration:none;padding:.5rem .75rem;display:inline-block}
+      nav .nav-link:hover, nav .nav-link:focus{background:rgba(255,255,255,0.15);color:#ffa500}
+      nav .dropdown{position:relative}
+      nav .dropdown-menu{display:none;position:absolute;left:0;top:100%;background:#ff8c00;margin:0;padding:.25rem 0;list-style:none;min-width:160px}
+      nav .dropdown:hover .dropdown-menu{display:block}
+      nav .dropdown-menu a{display:block;padding:.5rem 1rem;color:#fff}
+      nav .dropdown-menu a:hover{background:rgba(0,0,0,0.15)}
       
       /* Critical grid layout */
       .gallery .grid { 
@@ -130,8 +138,8 @@ const fullTitle = pageTitle ? `${pageTitle} | ${siteName}` : siteName;
     
     <!-- Load non-critical CSS asynchronously -->
   <!-- Load global stylesheet from public for consistent production path -->
-  <link rel="preload" href="/styles/global.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/styles/global.css?v=2"></noscript>
+  <link rel="preload" href="/styles/global.css?v=3" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/styles/global.css?v=3"></noscript>
   </head>
   <body style="min-height: 100vh; display: flex; flex-direction: column;">
     <!-- Service Worker Registration for Performance -->

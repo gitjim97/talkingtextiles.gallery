@@ -16,6 +16,7 @@ self.addEventListener('install', event => {
         return cache.addAll(urlsToCache);
       })
   );
+  self.skipWaiting();
 });
 
 // Fetch event - serve from cache with network fallback
@@ -91,4 +92,6 @@ self.addEventListener('activate', event => {
       );
     })
   );
+  // Take control of uncontrolled clients ASAP
+  self.clients.claim();
 });
