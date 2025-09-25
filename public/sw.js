@@ -1,11 +1,10 @@
-const CACHE_NAME = 'talking-textiles-v1';
+// Updated cache version to invalidate old cached layout/CSS assets
+const CACHE_NAME = 'talking-textiles-v2';
+// Core assets to pre-cache (keep minimal to avoid stale UI)
 const urlsToCache = [
   '/',
   '/gallery/',
-  '/images/thumbs/Angela_Davis-180.webp',
-  '/images/thumbs/Copy_of_Gravey-180.webp',
-  '/images/thumbs/Copy_of_Lillia_s_mom-180.webp',
-  '/images/thumbs/Copy_of_pam_mom_2-180.webp',
+  '/styles/global.css',
   '/favicon.svg'
 ];
 
@@ -20,40 +19,62 @@ self.addEventListener('install', event => {
 });
 
 // Fetch event - serve from cache with network fallback
+// Fetch strategy:
+//  - HTML: network-first (so new deployments show up), fallback to cache
+//  - CSS/JS: network-first then cache
+//  - Images: cache-first then network to update silently
 self.addEventListener('fetch', event => {
-  // Only handle GET requests
   if (event.request.method !== 'GET') return;
-  
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Return cached version or fetch from network
-        if (response) {
-          return response;
-        }
-        
-        return fetch(event.request).then(response => {
-          // Don't cache non-successful responses
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
+  const req = event.request;
+  const accept = req.headers.get('accept') || '';
+
+  // HTML documents
+  if (accept.includes('text/html')) {
+    event.respondWith(
+      fetch(req)
+        .then(res => {
+          const copy = res.clone();
+            caches.open(CACHE_NAME).then(c => c.put(req, copy));
+          return res;
+        })
+        .catch(() => caches.match(req))
+    );
+    return;
+  }
+
+  // CSS / JS network-first
+  if (req.destination === 'style' || req.destination === 'script') {
+    event.respondWith(
+      fetch(req)
+        .then(res => {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then(c => c.put(req, copy));
+          return res;
+        })
+        .catch(() => caches.match(req))
+    );
+    return;
+  }
+
+  // Images cache-first
+  if (req.destination === 'image') {
+    event.respondWith(
+      caches.match(req).then(cached => {
+        const fetchPromise = fetch(req).then(res => {
+          if (res && res.status === 200) {
+            const copy = res.clone();
+            caches.open(CACHE_NAME).then(c => c.put(req, copy));
           }
-          
-          // Clone the response
-          const responseToCache = response.clone();
-          
-          // Cache images and key pages
-          if (event.request.url.includes('/images/') || 
-              event.request.url.includes('/gallery/') ||
-              event.request.url.includes('/artist_pages/')) {
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-              });
-          }
-          
-          return response;
+          return res;
         });
+        return cached || fetchPromise;
       })
+    );
+    return;
+  }
+  // Default: try cache then network
+  event.respondWith(
+    caches.match(req).then(cached => cached || fetch(req))
   );
 });
 

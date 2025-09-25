@@ -130,8 +130,8 @@ const fullTitle = pageTitle ? `${pageTitle} | ${siteName}` : siteName;
     
     <!-- Load non-critical CSS asynchronously -->
   <!-- Load global stylesheet from public for consistent production path -->
-  <link rel="preload" href="/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/styles/global.css"></noscript>
+  <link rel="preload" href="/styles/global.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/styles/global.css?v=2"></noscript>
   </head>
   <body style="min-height: 100vh; display: flex; flex-direction: column;">
     <!-- Service Worker Registration for Performance -->
