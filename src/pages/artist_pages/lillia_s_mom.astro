@@ -3,24 +3,42 @@ import Layout from '../../layouts/Layout.astro';
 import ArtistNavigation from '../../components/ArtistNavigation.astro';
 ---
 
-<Layout pageTitle="Lillia's Mom - Textile Art" customFavicon="/images/Copy_of_Lillia_s_mom.jpg">
+<Layout pageTitle="Lillian's Mother - Textile Art" customFavicon="/images/Copy_of_Lillia_s_mom.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
       <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <!-- <h1>Lillia's Mom</h1> -->
-      <img src="/images/Copy_of_Lillia_s_mom.jpg" alt="Lillia's Mom Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 2rem;">Lillian's Mother</h1>
+      <picture>
+        <source srcset="/images/Copy_of_Lillia_s_mom.jpg" type="image/webp" />
+        <img src="/images/Copy_of_Lillia_s_mom.jpg" alt="Lillian's Mother Portrait" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" loading="eager" fetchpriority="high" />
+      </picture>
       <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-        <img src="/images/artists/lillia_s_mom/profile.jpg" alt="Lilli Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" />
+        <img src="/images/artists/lillia_s_mom/profile.jpg" alt="Lillian Rucker Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" loading="lazy" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
-          <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
+          <h2 style="color: #ffa500;">About the Artist</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Lilli creates heartfelt textile pieces inspired by family and generational stories. Her work celebrates the bonds between mothers and daughters through vibrant fabric art.
+            Lillian Rucker is a consummate professional seamstress who studied fashion at the Fashion Institute of Design and Merchandising (FIDM) in Los Angeles. She is also a licensed realtor, banker, and teacher who enjoys international travel, with Egypt being one of her favorite stops. In the kitchen, she creates delectable lemon chicken and holiday eggnog. During the COVID-19 pandemic, she and her son, Justin, created protective, high-end masks with filters.
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            Music is an inspirational driving force in her creative process, with jazz and Luther Vandross leading the way. While in college, Lillian was a member of the Black Panther Party, where she was one of the initiators of their breakfast program and met Bobby Seale, co-founder of the party.
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            Despite suffering a stroke that prevented her from driving, Lillian's tenacity to press out to class—arriving with her friend Annie Toliver—motivated everyone around her. Her reserved demeanor and quick wit hide a calculating sense of humor. As the "middle youngest of six children" (the fourth child, to be exact), Lillian personifies the saying, "You can't judge a book by its cover!" Her quiet exterior juxtaposes beautifully with her consummate creative abilities.
           </p>
         </div>
       </section>
       <section style="margin-top:2rem;">
-        <h2 style="color: #ffa500;">Artwork Information</h2>
+        <h2 style="color: #ffa500;">About the Subject</h2>
         <p style="line-height: 1.6; color: #fff;">
-          This work celebrates the bonds between mothers and daughters through vibrant fabric art, expressing love, heritage, and the continuity of family traditions.
+          Lillian chose her mother as her art subject, creating a heartfelt tribute to the woman who shaped her life. This portrait celebrates the bonds between mothers and daughters, honoring her mother's legacy through vibrant fabric art.
+        </p>
+      </section>
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Artwork</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          When Lillian wasn't sure if her project was heading in the right direction, her instructor encouraged her: "Just think about the early Improv jazz musicians — artists that came together without sheet music and free-styled each session with mesmerizing results. And that is, precisely, us — making sweet fabric art is what we will accomplish here!"
+        </p>
+        <p style="line-height: 1.6; color: #fff;">
+          And Lillian blew the roof off the joint with her finale! This portrait of her mother combines her professional seamstress skills from FIDM with the improvisational spirit of jazz—her creative driving force. The work demonstrates how her quiet demeanor conceals extraordinary artistic abilities, resulting in a stunning tribute to maternal love and family heritage.
         </p>
       </section>
       
