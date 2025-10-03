@@ -5,22 +5,59 @@ import Layout from '../../layouts/Layout.astro';
 <Layout>
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
    <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-    <!-- <h1>Copy of Gravey</h1> -->
-    <img src="/images/Copy_of_Gravey.jpg" alt="Copy of Gravey Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
+    
+    <!-- Artwork Title -->
+    <h1 style="color: #ffa500; text-align: center; margin-bottom: 1.5rem;">Marcus Garvey</h1>
+    
+    <picture>
+      <source srcset="/images/Copy_of_Gravey.webp" type="image/webp" />
+      <img 
+        src="/images/Copy_of_Gravey.jpg" 
+        alt="Marcus Garvey Artwork" 
+        style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" 
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
+      />
+    </picture>
+    
     <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-      <img src="/images/artists/Copy_of_Gravey/profile.jpg" alt="Copy of Gravey Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" loading="lazy" />
+      <img src="/images/artists/Copy_of_Gravey/profile.jpg" alt="Khalif Rasshan Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" loading="lazy" />
       <div style="flex: 1; min-width: 300px;">
         <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
         <p style="line-height: 1.6; color: #fff;">
-          Copy of Gravey is an emerging textile artist whose work explores memory and tradition through fabric.
+          This fabric portrait was created by <strong>Khalif Rasshan</strong>, Elder Artist and CEO of The African American Museum of Beginnings (TAAMB). 
+          Born John Gordon in 1951, Khalif is a retired history teacher with 37 years in education, earning degrees from La Verne College (BA Sociology) 
+          and Azusa Pacific College (MA Education).
+        </p>
+        <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+          In 2011, Khalif co-founded TAAMB with his wife Victoria, transforming a three-month Black History exhibit into a regional museum reflecting 
+          African diaspora and African American history. He has received numerous awards including the 2018 Lifetime Achievement Award and founded 
+          multiple educational programs including Sirius Young Scholars, Academic Progress Through Chess, and youth mentoring initiatives.
         </p>
       </div>
     </section>
+    
     <section style="margin-top:2rem;">
-      <h2>Artwork Information</h2>
-      <p>
-        This piece is a tribute to ancestral heritage and the stories woven into every thread.
+      <h2 style="color: #ffa500;">About the Subject</h2>
+      <p style="line-height: 1.6; color: #fff;">
+        Marcus Moziah Garvey (1887-1940) was a Jamaican political activist, publisher, journalist, and orator who became a powerful advocate 
+        for Black nationalism and Pan-Africanism. He founded the Universal Negro Improvement Association and was a proponent of Black pride, 
+        economic independence, and the Back-to-Africa movement.
       </p>
-    </section> -->
+    </section>
+    
+    <section style="margin-top:2rem;">
+      <h2 style="color: #ffa500;">About the Artwork</h2>
+      <p style="line-height: 1.6; color: #fff;">
+        As a student of African diaspora history, Khalif chose Marcus Garvey as his subject because he sees many Garveian traits within himself, 
+        particularly Garvey's drive for "self-repair: The healing of the Black Mind first!" Khalif believes in Garvey's philosophy that as a people, 
+        we must have a clear understanding of who we are - "a people of royalty" - before we can improve our environment and circumstances.
+      </p>
+      <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+        This textile portrait represents the intersection of Khalif's passion for African American history education and his artistic expression, 
+        honoring a leader whose vision for Black empowerment and self-determination continues to inspire educators and activists today.
+      </p>
+    </section>
   </main>
 </Layout>
