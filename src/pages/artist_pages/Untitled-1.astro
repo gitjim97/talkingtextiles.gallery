@@ -3,24 +3,45 @@ import Layout from '../../layouts/Layout.astro';
 import ArtistNavigation from '../../components/ArtistNavigation.astro';
 ---
 
-<Layout pageTitle="Untitled - Textile Art" customFavicon="/images/Untitled-1.jpg">
+<Layout pageTitle="James Anderson - Textile Art" customFavicon="/images/Untitled-1.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
         <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <!-- <h1>Untitled-1</h1> -->
-      <img src="/images/Untitled-1.jpg" alt="Untitled-1 Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 2rem;">James Anderson</h1>
+      <picture>
+        <source srcset="/images/Untitled-1.jpg" type="image/webp" />
+        <img src="/images/Untitled-1.jpg" alt="James Anderson Portrait" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" loading="eager" fetchpriority="high" />
+      </picture>
       <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-        <img src="/images/artists/Untitled-1/profile.jpg" alt="Paul Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" />
+        <img src="/images/artists/Untitled-1/profile.jpg" alt="Paulette Young Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" loading="lazy" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
-          <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
+          <h2 style="color: #ffa500;">About the Artist</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Paul's textile work explores abstract expression through fabric and mixed media. His artistic vision creates compelling visual narratives that speak to contemporary experiences.
+            Paulette Young is a healthcare entrepreneur with over 33 years of experience. Her first business was a traveling classroom named "Health Care Consultants," with a specific focus on educating students about HIV testing—the importance of taking two types of tests to determine HIV status within 11 to 15 days.
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            Her passion for teaching on that subject has carried her to the halls of several Southern California learning institutions: USC, Camino College in Hawthorne, Compton College, Pomona High School, Garey High School in Pomona, and high schools in East Los Angeles. She has also utilized Blog Talk Radio: America Health Crisis to educate the general public on various health matters and issues.
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            Paulette has authored two books: <em>HIV 2 Test is Better Than One</em> and <em>Health and Safety in a Child Care Setting</em>. She is working on a children's book: <em>The James Anderson Story</em>, which she trusts will encourage children to get involved in the aerospace industry.
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            She is featured in a mural collective called "Hall of Gratitude" at the Pomona Metro Gold Line Train Station for her accomplishments in disseminating HIV information. Over fifty distinguished Pomonaians have their photo image on individual ceramic tile murals, including fabric teacher Gary Lett and Khalif Rasshan, CEO of The African American Museum of Beginnings. Her HIV information has reached people around the world, including South Africa.
           </p>
         </div>
       </section>
       <section style="margin-top:2rem;">
-        <h2 style="color: #ffa500;">Artwork Information</h2>
+        <h2 style="color: #ffa500;">About the Subject</h2>
         <p style="line-height: 1.6; color: #fff;">
-          This abstract textile art piece represents contemporary artistic expression through innovative fabric techniques and thoughtful composition.
+          James Anderson is Paulette's father, whose phenomenal father-daughter relationship greatly impacted her life. His ability to dream big, in addition to all of his accomplishments in aeronautics, inspired Paulette's own entrepreneurial journey and passion for education. His untold aeronautical story represents an important piece of African American history in aerospace.
+        </p>
+      </section>
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Artwork</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          Paulette created this Fabric Art Portrait under the direction of visual artist and teacher Gary V. Lett at The African American Museum of Beginnings in Pomona, California. She is thankful for the opportunity and challenge to visually tell a small segment of her dad's untold aeronautical story.
+        </p>
+        <p style="line-height: 1.6; color: #fff;">
+          This portrait represents more than a personal tribute—it's part of Paulette's mission to honor her father's legacy and inspire future generations. The work connects to her forthcoming children's book, <em>The James Anderson Story</em>, which aims to encourage children to get involved in the aerospace industry, continuing her father's legacy of dreaming big and achieving great accomplishments.
         </p>
       </section>
       
