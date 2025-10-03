@@ -3,26 +3,72 @@ import Layout from '../../layouts/Layout.astro';
 import ArtistNavigation from '../../components/ArtistNavigation.astro';
 ---
 
-<Layout pageTitle="Daddy - Textile Art" customFavicon="/images/daddy.jpg">
+<Layout pageTitle="Rev. Charles H. Lett, Sr. - Textile Art" customFavicon="/images/daddy.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
     <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <!-- <h1>Daddy</h1> -->
-      <img src="/images/daddy.jpg" alt="Daddy Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
-      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-        <img src="/images/artists/Daddy/profile.jpg" alt="Daddy Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" loading="lazy" />
+      
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 1.5rem;">Rev. Charles H. Lett, Sr.</h1>
+      
+      <picture>
+        <source srcset="/images/daddy.webp" type="image/webp" />
+        <img 
+          src="/images/daddy.jpg" 
+          alt="Rev. Charles H. Lett, Sr. Textile Portrait" 
+          style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" 
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
+      
+      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap; justify-content: center;">
+        <img src="/images/artists/Daddy/profile.jpg" alt="Lisha K. Lett Profile" style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink: 0;" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
           <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Daddy is a storyteller whose textile works reflect the strength and resilience of family.
+            This fabric portrait was created by <strong>Lisha K. Lett</strong>, affectionately known as "Queen Lisha" by her husband, 
+            Gary Lett. Elder Artist and Secretary of Lett's Do Art, Inc., Lisha is the proud soulmate of Gary for 46 years of marriage. 
+            Together they have two dynamic sons—Vincent, the musician, and Victor, the visual artist—and eight vibrant, intelligent, 
+            talented, and loving grandchildren.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            Taking the Improvisational fabric portraiture art class with Gary was a life-changing experience for Lisha. Although she 
+            and Gary had made a fabric portrait of her mother before this class, she never considered herself an artist. When people 
+            asked if she was an artist, she always replied, "No!" But now her response is "Yes!" She's created two fabric portrait 
+            artworks and exhibited them publicly, along with Gary's and Victor's art.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            Her work was featured in February 2023 at the African American Advisory Alliance (4A's) in Pomona, California, and in 
+            February 2024 at the Ontario International Airport Administration office. The 4A's show, titled "It's a Lett Art Thang," 
+            was curated by Gary with their son Victor as the headliner. At the show, Lisha was interviewed for the University of 
+            La Verne College newspaper, explaining her art process.
           </p>
         </div>
       </section>
+      
       <section style="margin-top:2rem;">
-        <h2>Artwork Information</h2>
-        <p>
-          This piece honors the legacy of fathers and the stories they pass down.
+        <h2 style="color: #ffa500;">About the Subject</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          Rev. Charles H. Lett, Sr. was Gary Lett's father, a man whose legacy lives on through this powerful textile portrait. 
+          As a reverend, he represented faith, family values, and the spiritual foundation that continues to influence the Lett 
+          family's artistic and community work. This portrait serves as both a tribute to family heritage and a celebration of 
+          the strength and wisdom passed down through generations.
         </p>
-      </section> -->
+      </section>
+      
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Artwork</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          This masterful fabric portrait of Rev. Charles H. Lett, Sr. represents Lisha's creative breakthrough. The class, held at 
+          The African American Museum of Beginnings (TAAMB) from December 2022 through November 2023, was where her creativity 
+          reached a higher level. She is thrilled to now be considered a budding fine artist.
+        </p>
+        <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+          It was a tremendous honor for Lisha to have her artwork in the same art show as her husband Gary and son Victor. Having 
+          her husband and soulmate as her class instructor was incredible, though she intentionally tried not to be the teacher's 
+          pet, willingly sharing him with the other students. She is so proud of her finished product—a masterful work of art 
+          honoring her father-in-law and preserving his legacy through fabric and thread.
+        </p>
+      </section>
       
     <ArtistNavigation />
   </main>
