@@ -1,0 +1,80 @@
+---
+// Artist Navigation Component
+---
+
+<nav class="artist-navigation" style="
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin: 2rem 0; 
+  padding: 1rem 0; 
+  border-top: 1px solid rgba(255, 165, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+">
+  <button 
+    id="prev-artist"
+    style="
+      background: linear-gradient(135deg, #ff8c00, #ffa500);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(255, 165, 0, 0.3);
+    "
+    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255, 165, 0, 0.4)'"
+    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(255, 165, 0, 0.3)'"
+  >
+    ← Previous
+  </button>
+
+  <div style="
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #ffa500;
+    font-size: 0.9rem;
+  ">
+    <span>Use ← → arrow keys to navigate</span>
+    <a 
+      href="/gallery/" 
+      style="
+        color: #ffa500;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ffa500;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      "
+      onmouseover="this.style.backgroundColor='#ffa500'; this.style.color='black'"
+      onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ffa500'"
+    >
+      Gallery
+    </a>
+  </div>
+
+  <button 
+    id="next-artist"
+    style="
+      background: linear-gradient(135deg, #ff8c00, #ffa500);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(255, 165, 0, 0.3);
+    "
+    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255, 165, 0, 0.4)'"
+    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(255, 165, 0, 0.3)'"
+  >
+    Next →
+  </button>
+</nav>
+
+<script src="/js/artist-navigation.js" is:inline></script>
