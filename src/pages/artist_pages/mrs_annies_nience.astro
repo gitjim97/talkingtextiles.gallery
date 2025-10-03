@@ -5,22 +5,65 @@ import ArtistNavigation from '../../components/ArtistNavigation.astro';
 
 <Layout pageTitle="Mrs. Annie's Niece - Textile Art" customFavicon="/images/Mrs_Annies_Nience.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
-        <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <!-- <h1>Mrs. Annie's Niece</h1> -->
-      <img src="/images/Mrs_Annies_Nience.jpg" alt="Mrs. Annie's Niece Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
-      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-        <img src="/images/artists/mrs_annies_nience/profile.jpg" alt="Annie Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" />
+    <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
+      
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 1.5rem;">Mrs. Annie's Niece</h1>
+      
+      <picture>
+        <source srcset="/images/Mrs_Annies_Nience.webp" type="image/webp" />
+        <img 
+          src="/images/Mrs_Annies_Nience.jpg" 
+          alt="Mrs. Annie's Niece Textile Portrait" 
+          style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" 
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
+      
+      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap; justify-content: center;">
+        <img src="/images/artists/mrs_annies_nience/profile.jpg" alt="Artist Profile" style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink: 0;" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
           <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Annie's textile art celebrates family connections and honors the wisdom passed down through generations. Her work reflects the strength and beauty of family bonds.
+            This fabric portrait was created by an artist whose creative journey spans multiple disciplines and decades. Their first 
+            fascination was fashion design in high school, until all their designs disappeared. This setback led them to explore 
+            interior design, which then shifted to fine art encompassing painting, drawing, sculpture, crafts, and jewelry.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            A graduate of Michigan State University with a BFA earned in 1974, the artist moved to California and taught art for one 
+            year before deciding to pursue another credential in Special Education Communication Handicapped. They dedicated 30 years 
+            to teaching special education while still incorporating art into their career as much as possible, demonstrating a lifelong 
+            commitment to both creativity and education.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            Some time ago, they learned quilting and fabric portraits, truly enjoying the creative aspect as much as the other art 
+            forms they've practiced over the years. Their creative level never stops escalating, and this textile portrait represents 
+            the latest evolution in a remarkable artistic journey that has spanned fashion, interior design, fine arts, education, 
+            and now fabric portraiture.
           </p>
         </div>
       </section>
+      
       <section style="margin-top:2rem;">
-        <h2 style="color: #ffa500;">Artwork Information</h2>
+        <h2 style="color: #ffa500;">About the Subject</h2>
         <p style="line-height: 1.6; color: #fff;">
-          This textile art piece features family connections and celebrates the enduring bonds that unite us across generations, told through fabric and artistic expression.
+          This portrait depicts Mrs. Annie's niece, celebrating family connections and honoring the bonds that unite us across 
+          generations. The work represents not just a family member, but the enduring relationships and wisdom passed down through 
+          family lines, preserving memories and stories through the art of fabric portraiture.
+        </p>
+      </section>
+      
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Artwork</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          This textile portrait brings together the artist's decades of experience across multiple art forms—from fashion design 
+          and interior design to painting, sculpture, and crafts. The piece demonstrates how their BFA training from Michigan State 
+          University and 30 years of teaching experience combine with their more recent exploration of quilting and fabric portraits.
+        </p>
+        <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+          The work reflects the artist's philosophy that creativity never stops escalating. Each stitch and fabric choice draws from 
+          a lifetime of artistic exploration, showing how diverse creative experiences enrich and inform new artistic endeavors. This 
+          portrait stands as testament to the artist's unwavering dedication to creative expression throughout their remarkable career.
         </p>
       </section>
       
