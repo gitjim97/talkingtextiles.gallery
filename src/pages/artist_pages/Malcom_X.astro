@@ -3,27 +3,73 @@ import Layout from '../../layouts/Layout.astro';
 import ArtistNavigation from '../../components/ArtistNavigation.astro';
 ---
 
-<Layout pageTitle="Malcom X - Textile Art" customFavicon="/images/Malcom_X.jpg">
+<Layout pageTitle="Malcolm X - Textile Art" customFavicon="/images/Malcom_X.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
     <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <!-- <h1>Malcom X</h1> -->
-      <img src="/images/Malcom_X.jpg" alt="Malcom X Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
-      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-        <img src="/images/artists/Malcom_X/profile.jpg" alt="Malcom X Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" loading="lazy" />
+      
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 1.5rem;">Malcolm X</h1>
+      
+      <picture>
+        <source srcset="/images/Malcom_X.webp" type="image/webp" />
+        <img 
+          src="/images/Malcom_X.jpg" 
+          alt="Malcolm X Textile Portrait" 
+          style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" 
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
+      
+      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap; justify-content: center;">
+        <img src="/images/artists/Malcom_X/profile.jpg" alt="Gary V. Lett Profile" style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink: 0;" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
           <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Malcom X's textile work is a powerful reflection on activism, justice, and cultural identity.
+            This fabric portrait was created by <strong>Gary V. Lett</strong>, Instructor, Anthologist, and CEO of Lett's Do Art, 
+            hailing from Pomona, California. Gary's artistic journey began when he sketched his first self-portrait in front of 
+            their living room mirror before entering kindergarten. Growing up near the Pomona Fairgrounds, the roar of dragster 
+            engines ignited his imagination into a passion for drawing racing vehicles, popping wheelies and all.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            As a visual artist, Gary refuses to confine himself to a single genre. Over the years, he's developed into a 
+            multifaceted creator, working through various mediums including paint, drawing, sculpture, ceramics, fabric, and 
+            graphic art. His sixth-grade teacher, Mrs. Fredericks, played a pivotal role in channeling his artistry and motivated 
+            him to stretch his creative and academic abilities through storytelling and illustrating.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            Despite facing race-based rejection in the late 1970s due to Black life themes in his paintings, Gary's creative 
+            pursuits endured. His artistic narratives define a confluence of history, community, and a search for purpose, 
+            emphasizing the significance of enriching lives through love and appreciation of diverse histories and heritages.
           </p>
         </div>
       </section>
-      <section style="margin-top:2rem;">
-        <h2>Artwork Information</h2>
-        <p>
-          This piece is inspired by the legacy of Malcom X and the ongoing struggle for equality.
-        </p>
-      </section> -->
       
-    <ArtistNavigation />
-  </main>
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Subject</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          Malcolm X (1925-1965) was a powerful African American Muslim minister and human rights activist who was a prominent 
+          figure during the civil rights movement. A spokesman for the Nation of Islam until 1964, he advocated for Black 
+          empowerment and the promotion of Islam within the Black community. Malcolm X's speeches and writings emphasized 
+          racial pride, economic self-reliance, and identity politics, making him an enduring symbol of Black resistance 
+          and self-determination.
+        </p>
+      </section>
+      
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Artwork</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          As the instructor of the textile art class, Gary had no intentions of making a portrait himself. However, when a 
+          participant abandoned the Malcolm X portrait after laying down the jacket, shirt, and tie, Gary picked it up and 
+          brought it to its zenith. This piece represents not only Gary's technical mastery across diverse mediums but also 
+          his commitment to completing meaningful work that honors civil rights icons.
+        </p>
+        <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+          The Malcolm X portrait stands as part of Gary's broader artistic mission: creating works that depict civil rights 
+          leaders and emphasize the ongoing struggle for equality and justice. Gary is currently creating a mural depicting 
+          Dr. Martin Luther King Jr. and other civil rights icons with a voting theme, to be installed in Pomona.
+        </p>
+      </section>
+      
+      <ArtistNavigation />
+    </main>
 </Layout>
