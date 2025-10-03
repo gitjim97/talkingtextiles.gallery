@@ -3,24 +3,48 @@ import Layout from '../../layouts/Layout.astro';
 import ArtistNavigation from '../../components/ArtistNavigation.astro';
 ---
 
-<Layout pageTitle="Kamala - Textile Art" customFavicon="/images/Kamala.jpg">
+<Layout pageTitle="Vice President Kamala Harris - Textile Art" customFavicon="/images/Kamala.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
     <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <!-- <h1>Kamala</h1> -->
-      <img src="/images/Kamala.jpg" alt="Kamala Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 2rem;">Vice President Kamala Harris</h1>
+      <picture>
+        <source srcset="/images/Kamala.jpg" type="image/webp" />
+        <img src="/images/Kamala.jpg" alt="Vice President Kamala Harris Portrait" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" loading="eager" fetchpriority="high" />
+      </picture>
       <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-        <img src="/images/artists/Kamala/profile.jpg" alt="Vikki Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" />
+        <img src="/images/artists/Kamala/profile.jpg" alt="Victoria Streeter-Rasshan Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" loading="lazy" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
-          <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
+          <h2 style="color: #ffa500;">About the Artist</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Vikki is a contemporary textile artist whose work bridges tradition and innovation. Her artistry explores the power of storytelling through fabric and color, creating meaningful connections across cultures.
+            Victoria Streeter-Rasshan is co-founder of The African American Museum of Beginnings (TAAMB), where she serves as Secretary. She grew up in South Los Angeles and later migrated to the Inland Empire in Southern California, where she spent nearly forty years in education. Her humble beginnings started with tutoring and later transitioning to teacher for the Pomona Unified School District (PUSD).
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            Upon retirement, Victoria and her husband Khalif, along with other community leaders, officially formed the TAAMB museum in 2011. The community was concerned about the lack of African American history being taught in schools, and therefore, out of necessity, the traveling museum was born in 2005.
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            Victoria had the esteemed honor of being selected as PUSD's Teacher of the Year. In addition, she's been awarded several honors for her work with the museum by local organizations and political dignitaries. She enjoys treating herself to hobbies including line dancing and quilting, and takes delight in spending time with family, especially her grands.
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            She holds an M.A. in Education from Azusa Pacific University and a B.A. in Sociology from the University of La Verne. Victoria and Khalif celebrated their 50th wedding anniversary in 2025. They are proud parents of four children—one daughter and three sons—and have ten bright, athletic, smart, and loving grandchildren!
           </p>
         </div>
       </section>
       <section style="margin-top:2rem;">
-        <h2 style="color: #ffa500;">Artwork Information</h2>
+        <h2 style="color: #ffa500;">About the Subject</h2>
         <p style="line-height: 1.6; color: #fff;">
-          This artwork explores the power of storytelling through fabric and color, representing strength, leadership, and cultural pride in textile form.
+          In 2024, after President Joseph Biden withdrew as the Democratic Party's presidential nominee, Vice President Kamala Harris became the nominee. As her running mate, she selected Governor Tim Walz of Minnesota. With 107 days to campaign before the election, they ran a positive campaign that shared her love for the country, democracy, and ideals to support and help Americans live a better life.
+        </p>
+        <p style="line-height: 1.6; color: #fff;">
+          Vice President Kamala Harris represents a historic milestone in American politics as the first woman, first Black woman, and first South Asian American to serve as Vice President of the United States. Her leadership and dedication to public service embody the values of democracy and equality that inspire communities across the nation.
+        </p>
+      </section>
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Artwork</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          This fabric art portrait of Vice President Kamala Harris was created by Victoria Streeter-Rasshan, bringing together her passion for quilting with her lifelong dedication to education and African American history. The work represents the intersection of Victoria's multiple roles: educator, museum co-founder, and textile artist.
+        </p>
+        <p style="line-height: 1.6; color: #fff;">
+          Created during the historic 2024 campaign, this portrait honors Vice President Harris's positive campaign message and her commitment to democracy. The artwork embodies the same mission that drove Victoria and Khalif to create TAAMB—ensuring that African American achievements and contributions are documented, celebrated, and taught to future generations. Through fabric and thread, Victoria preserves this moment in history while inspiring the ten grandchildren she cherishes.
         </p>
       </section>
       
