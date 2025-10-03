@@ -17,13 +17,21 @@
     '/images/Untitled-1.jpg',
     '/images/Page 30.jpg'
   ];
-  const pick = galleryImages[Math.floor(Math.random() * galleryImages.length)];
-  const link = document.createElement('link');
-  link.rel = 'icon';
-  link.type = 'image/jpeg';
-  link.sizes = '48x48';
-  link.href = pick;
-  // Remove any existing favicons
-  document.querySelectorAll('link[rel="icon"]').forEach(el => el.remove());
-  document.head.appendChild(link);
+  
+  // Pick a random image
+  const randomImage = galleryImages[Math.floor(Math.random() * galleryImages.length)];
+  
+  // Create favicon link
+  const faviconLink = document.createElement('link');
+  faviconLink.rel = 'icon';
+  faviconLink.type = 'image/jpeg';
+  faviconLink.href = randomImage;
+  
+  // Remove any existing favicon links to avoid conflicts
+  document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]').forEach(el => el.remove());
+  
+  // Add the new random favicon
+  document.head.appendChild(faviconLink);
+  
+  console.log('Random favicon set to:', randomImage);
 })();

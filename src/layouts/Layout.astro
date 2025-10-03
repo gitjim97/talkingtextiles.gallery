@@ -31,11 +31,8 @@ const fullTitle = pageTitle ? `${pageTitle} | ${siteName}` : siteName;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <!-- Random favicon will be set by JavaScript from gallery portraits -->
+    <script src="/js/random-favicon.js" is:inline></script>
     
     <link rel="canonical" href={canonicalURL} />
 
