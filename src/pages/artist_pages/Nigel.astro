@@ -3,24 +3,42 @@ import Layout from '../../layouts/Layout.astro';
 import ArtistNavigation from '../../components/ArtistNavigation.astro';
 ---
 
-<Layout pageTitle="Nigel - Textile Art" customFavicon="/images/Nigel.jpg">
+<Layout pageTitle="Cheikh Anta Diop - Textile Art" customFavicon="/images/Nigel.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
     <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <!-- <h1>Nigel</h1> -->
-      <img src="/images/Nigel.jpg" alt="Nigel Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 2rem;">Cheikh Anta Diop</h1>
+      <picture>
+        <source srcset="/images/Nigel.jpg" type="image/webp" />
+        <img src="/images/Nigel.jpg" alt="Cheikh Anta Diop Portrait" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" loading="eager" fetchpriority="high" />
+      </picture>
       <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-        <img src="/images/artists/Nigel/profile.jpg" alt="Robert Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" />
+        <img src="/images/artists/Nigel/profile.jpg" alt="Robert Hicks Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" loading="lazy" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
-          <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
+          <h2 style="color: #ffa500;">About the Artist</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Robert's textile art is known for its bold colors and innovative use of materials. His work pushes the boundaries of traditional textile techniques with contemporary vision.
+            Robert Hicks is an upcoming senior at the University of California, Merced, pursuing a degree in mechanical engineering. His journey into this field stems from a lifelong passion for cars that began in childhood. He's particularly proud of the Chevy Camaro he built himself and has bought and sold cars for profit as a side venture.
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            In high school, Robert took honors and AP classes while playing varsity football as a defensive back/strong safety and competing in varsity track and field, specializing in the 100 meters. He was actively involved in clubs such as Leaders Making Leaders and the Black Student Union, experiences that shaped his leadership skills and community involvement.
+          </p>
+          <p style="line-height: 1.6; color: #fff;">
+            At UC Merced, Robert's collegiate involvement includes The National Society of Black Engineers, Associated Students Representative (student government), Black Student Coalition, and Sigma Chi fraternity. Known for his energetic and talkative nature and lively spirit, whether in the garage working on his car or out with friends, he strives to be the life of the party, making every moment memorable.
           </p>
         </div>
       </section>
       <section style="margin-top:2rem;">
-        <h2 style="color: #ffa500;">Artwork Information</h2>
+        <h2 style="color: #ffa500;">About the Subject</h2>
         <p style="line-height: 1.6; color: #fff;">
-          This piece pushes the boundaries of traditional textile techniques, showcasing innovative approaches to fabric art and contemporary artistic expression.
+          Cheikh Anta Diop was a pioneering Senegalese historian, anthropologist, physicist, and politician who studied the human race's origins and pre-colonial African culture. His work challenged Eurocentric views of African history and emphasized the contributions of African civilizations, particularly ancient Egypt's African origins. Robert delved into Diop's life and contributions during his summer 2023 experience at TAAMB, gaining a deep appreciation for his groundbreaking work.
+        </p>
+      </section>
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Artwork</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          One of the most enriching and enjoyable experiences of Robert's summer 2023 was attending TAAMB (The African American Museum of Beginnings), where he learned about the history of Africans and African Americans and participated in creating fabric art. Although Robert felt his artwork "wasn't the best," the process was gratifying and enjoyable.
+        </p>
+        <p style="line-height: 1.6; color: #fff;">
+          This portrait of Cheikh Anta Diop represents Robert's journey into African history and textile art—a creative departure from his mechanical engineering studies and automotive passions. The work honors Diop's legacy while demonstrating how art can bridge disciplines, connecting a future engineer with the rich cultural heritage that Diop devoted his life to documenting and celebrating.
         </p>
       </section>
       
