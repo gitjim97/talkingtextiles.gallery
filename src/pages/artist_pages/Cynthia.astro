@@ -5,27 +5,56 @@ import Layout from '../../layouts/Layout.astro';
 <Layout pageTitle="Cynthia - Textile Art" customFavicon="/images/Cynthia.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
     <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <h1 style="color: #ffa500; text-align: center;">Cynthia</h1>
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 1.5rem;">Ida B. Wells-Barnett</h1>
       
-      <!-- Main Artwork Portrait -->
-      <section style="text-align: center; margin: 2rem 0;">
-        <img src="/images/Cynthia.webp" alt="Cynthia Textile Portrait" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.35);" onerror="this.src='/images/Cynthia.jpg'" />
-      </section>
+      <picture>
+        <source srcset="/images/Cynthia.webp" type="image/webp" />
+        <img 
+          src="/images/Cynthia.jpg" 
+          alt="Ida B. Wells-Barnett Textile Portrait" 
+          style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" 
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
       
       <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap; justify-content: center;">
-        <img src="/images/artists/Cynthia/profile.jpg" alt="Cynthia Profile" style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink: 0;" onerror="this.style.display='none'" />
+        <img src="/images/artists/Cynthia/profile.jpg" alt="Cynthia Clark Profile" style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink: 0;" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
           <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Cynthia's work is characterized by vibrant colors and intricate patterns, inspired by her cultural heritage.
-            Her textile artistry celebrates the beauty of tradition while embracing contemporary expression.
+            This fabric portrait was created by <strong>Cynthia Clark</strong>, a 17-year-old junior at Claremont High School (class of 2025) 
+            from Pomona, California. Cynthia is an "A" grade student involved in school clubs, after-school programs, and various community organizations. 
+            She participates in the Sirius Young Scholar program at The African American Museum of Beginnings (TAAMB).
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            Cynthia's interests include playing piano and drums, cooking, baking, writing, and watercolor painting. She's studying American Sign Language 
+            and pursuing medical assistant certification through ROP. Her career goal is to become an optometrist with a Health Sciences degree from UC Berkeley, 
+            followed by a Doctorate in Optometry to open her own practice.
           </p>
         </div>
       </section>
+      
       <section style="margin-top:2rem;">
-        <h2 style="color: #ffa500;">Artist Statement</h2>
+        <h2 style="color: #ffa500;">About the Subject</h2>
         <p style="line-height: 1.6; color: #fff;">
-          Through fabric and thread, I explore the intersection of tradition and modernity, creating pieces that honor cultural heritage while expressing contemporary artistic vision.
+          Ida B. Wells-Barnett (1862-1931) was a pioneering African American journalist, activist, and civil rights leader. She was a fearless 
+          investigative journalist who documented and exposed the horrors of lynching in the American South, risking her own life to fight for justice. 
+          Wells-Barnett was also a founding member of the NAACP and a suffragette who fought for women's voting rights.
+        </p>
+      </section>
+      
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Artwork</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          This fabric art portrait was Cynthia's first textile project, created in admiration of Ida B. Wells-Barnett and appreciation for everything 
+          she did to help African American causes. Cynthia enjoyed selecting the various fabrics and seeing how each one enhanced the look of her portrait. 
+          Her favorite part was sewing and keeping all the beautiful fabrics attached to the under cloth.
+        </p>
+        <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+          The project taught Cynthia to think more deeply about the meaning of different art pieces and brought out skills she didn't know she had, 
+          like sewing. She learned about shadows and how to make certain parts of her artwork stand out. Looking at her finished work continues to 
+          inspire her, and she hopes to create many more art pieces of historical Black figures to inspire others to do the same.
         </p>
       </section>
     </main>
