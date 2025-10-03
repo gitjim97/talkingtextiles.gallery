@@ -6,23 +6,70 @@ import ArtistNavigation from '../../components/ArtistNavigation.astro';
 <Layout pageTitle="Frans' Grandmother - Textile Art" customFavicon="/images/Frans_grand_mother.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
     <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <!-- <h1>Frans' Grandmother</h1> -->
-      <img src="/images/Frans_grand_mother.jpg" alt="Frans' Grandmother Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
-      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-        <img src="/images/artists/frans_grand_mother/profile.jpg" alt="Frans' Grandmother Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" loading="lazy" />
+      
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 1.5rem;">Fran's Grandmother</h1>
+      
+      <picture>
+        <source srcset="/images/Frans_grand_mother.webp" type="image/webp" />
+        <img 
+          src="/images/Frans_grand_mother.jpg" 
+          alt="Fran's Grandmother Textile Portrait" 
+          style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" 
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
+      
+      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap; justify-content: center;">
+        <img src="/images/artists/frans_grand_mother/profile.jpg" alt="Fran Rudolph Profile" style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink: 0;" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
           <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Frans' Grandmother's legacy lives on through her beautiful and meaningful textile creations.
+            This fabric portrait was created by <strong>Fran Rudolph</strong>, an Elder Artist born on August 12, 1953, in Mobile, 
+            Alabama, the eldest of nine siblings. At the tender age of 7, Fran was the only one who relocated to Los Angeles, 
+            California, to live with her aunt. Her first memory of that transition was standing in Union Station, watching people 
+            walk around—"What a shock!" She can't even remember the train ride.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            Reflecting on her childhood, Fran often thinks about the "wasted time" without hobbies. Her summers were spent at 
+            Exposition Park, listening to Beatles 45s with friends, or reading "hotrod" books in the back seat of her mother's car. 
+            Though she had a wonderful childhood as an only child in California, teachers said she did just enough to get by—playing 
+            outside was everything to her.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            Her creative journey began in adulthood when sewing became a genuine interest. She took garment construction classes in 
+            junior college, then shifted to quilting and other homemade crafts. Deep down, Fran loves to learn and is always 
+            interested in doing something new. When the opportunity for the Improvisational Fabric Portrait Art workshop came along, 
+            she was eager to start this new learning curve.
           </p>
         </div>
       </section>
+      
       <section style="margin-top:2rem;">
-        <h2>Artwork Information</h2>
-        <p>
-          This piece is a testament to the wisdom and artistry of grandmothers everywhere.
+        <h2 style="color: #ffa500;">About the Subject</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          This portrait honors Fran's grandmother—a woman who will forever be in her heart. The piece represents not just family 
+          heritage but the deep connection between generations, preserving the memory and legacy of a beloved grandmother through 
+          the art of fabric portraiture. This work gives Fran's grandmother "her place in her story," ensuring her memory and 
+          influence continue to inspire.
         </p>
-      </section> -->
+      </section>
+      
+      <section style="margin-top:2rem;">
+        <h2 style="color: #ffa500;">About the Artwork</h2>
+        <p style="line-height: 1.6; color: #fff;">
+          Creating this improvisational fabric portrait taught Fran valuable lessons about the creative process. The improvisational 
+          art form is complex due to the numerous possibilities for achieving an outcome, and deep soul-searching is necessary to 
+          create favorable effects on the subject being created. This class taught her that she needed to overcome impatience and 
+          the eagerness to rush through a project.
+        </p>
+        <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+          In addition to soul searching, Fran discovered that contemplation is necessary in this art form. For someone who grew up 
+          without hobbies and "just enough" motivation, this portrait represents a profound transformation—a woman who now loves to 
+          learn, always seeks something new, and has found another creative outlet through Gary's instruction. This piece is both a 
+          tribute to her grandmother and a testament to Fran's own creative evolution.
+        </p>
+      </section>
       
     <ArtistNavigation />
   </main>
