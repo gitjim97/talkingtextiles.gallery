@@ -3,24 +3,64 @@ import Layout from '../../layouts/Layout.astro';
 import ArtistNavigation from '../../components/ArtistNavigation.astro';
 ---
 
-<Layout pageTitle="Jeanneta Art - Textile Art" customFavicon="/images/Jeanneta_art.jpg">
+<Layout pageTitle="Jeannetta Hunter - Self Portrait" customFavicon="/images/Jeanneta_art.jpg">
   <a href="/gallery/" style="margin:1rem;display:inline-block;">← Back to Gallery</a>
     <main class="artist-page-bg" style="max-width: 800px; margin: 2rem auto;">
-      <!-- <h1>Jeanneta</h1> -->
-      <img src="/images/Jeanneta_art.jpg" alt="Jeanneta Artwork" style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" />
-      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap;">
-        <img src="/images/artists/Jeanneta_art/profile.jpg" alt="Jeanneta Profile" style="width:120px; height:120px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.10); flex-shrink: 0;" onerror="this.style.display='none'" />
+      
+      <h1 style="color: #ffa500; text-align: center; margin-bottom: 1.5rem;">Jeannetta Hunter - Self Portrait</h1>
+      
+      <picture>
+        <source srcset="/images/Jeanneta_art.webp" type="image/webp" />
+        <img 
+          src="/images/Jeanneta_art.jpg" 
+          alt="Jeannetta Hunter Self Portrait" 
+          style="width:100%; max-width:600px; display:block; margin:1rem auto; border-radius:12px;" 
+          loading="eager"
+          fetchpriority="high"
+        />
+      </picture>
+      
+      <section style="display: flex; align-items: flex-start; gap: 2rem; margin-top:2rem; flex-wrap: wrap; justify-content: center;">
+        <img src="/images/artists/Jeanneta_art/profile.jpg" alt="Jeannetta Hunter Profile" style="width:180px; height:180px; border-radius:50%; object-fit:cover; box-shadow:0 4px 16px rgba(0,0,0,0.15); flex-shrink: 0;" onerror="this.style.display='none'" />
         <div style="flex: 1; min-width: 300px;">
-          <h2 style="color: #ffa500; margin-top: 0;">About the Artist</h2>
+          <h2 style="color: #ffa500; margin-top: 0;">About the Artist & Subject</h2>
           <p style="line-height: 1.6; color: #fff;">
-            Jeanneta's art is a vibrant expression of culture, memory, and personal history. Her textile work bridges generations, telling stories through fabric and thread.
+            <strong>Jeannetta Hunter</strong> was born to Shirley and Ora Roberson in San Francisco, CA, on March 22, 1955, where she 
+            attended school and completed her education. She chose herself as the subject for this portrait, reasoning that if she 
+            didn't do the portrait justice, she wouldn't hurt anyone else. This self-portrait represents both artist and subject in 
+            one powerful expression of identity.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            Jeannetta carries a profound historical legacy: she is the great-great-great-great-great-granddaughter of President James 
+            Madison, the 4th President of the United States. Her lineage traces back to an African woman named Mandy, who was born 
+            free in Ghana, stolen from her homeland, and sold to James Madison, Sr. Mandy gave birth to Corrine, and the family line 
+            continued through Jim, Emanuel, Giles Madison (Jeannetta's maternal great-grandfather), and Chester Madison (her grandfather). 
+            Many of her ancestors are buried at Montpelier, where President Madison lived as a child, and where her heritage runs deep 
+            through documentation.
+          </p>
+          <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+            While always interested in the arts, Jeannetta discovered her true passion for quilting in 2016 when she became a senior. 
+            Her maternal grandmother, Georgia Madison, was a quilter, so "it's in my blood," she says, hoping to continue the legacy. 
+            Before 2016, she didn't even know how to thread a sewing machine! Once she caught the bug, she was hooked. In her own words, 
+            quilting is her "zen, my peace, my happy place."
           </p>
         </div>
       </section>
+      
       <section style="margin-top:2rem;">
-        <h2 style="color: #ffa500;">Artwork Information</h2>
+        <h2 style="color: #ffa500;">About the Artwork</h2>
         <p style="line-height: 1.6; color: #fff;">
-          This piece is part of a series exploring the intersection of art and identity, showcasing the power of textile as a medium for cultural expression.
+          This self-portrait represents Jeannetta's journey into improvisational fabric portraiture under the instruction of renowned 
+          artist Mr. Gary Lett. It has been an honor and privilege for her to work with Gary, learning techniques she now shares with 
+          a new generation of young artists. The process has allowed her to meet many talented seniors and youth who share the same 
+          desires and passion for the arts.
+        </p>
+        <p style="line-height: 1.6; color: #fff; margin-top: 1rem;">
+          Jeannetta believes strongly in preserving this art form: "We can't allow the art to die. Our community needs this art form 
+          to help share our story of a rich culture." She hopes this art continues to inspire and develop young people, who will pass 
+          it on to the next generation, thereby enriching the culture. This self-portrait stands as testament to her commitment—a woman 
+          carrying the legacy of both her quilter grandmother and her complex American heritage, using fabric and thread to tell her 
+          own story and inspire others.
         </p>
       </section>
       
