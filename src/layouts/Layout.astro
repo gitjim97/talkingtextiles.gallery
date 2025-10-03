@@ -10,6 +10,7 @@ interface Props {
   image?: string;
   type?: string;
   structuredData?: object;
+  customFavicon?: string;
 }
 const {
   pageTitle,
@@ -17,7 +18,8 @@ const {
   keywords = "textile art, fabric art, gallery, artists, exhibitions, classes, workshops, cultural art, African American art, storytelling through fabric",
   image = "/images/AnthCover.jpg",
   type = "website",
-  structuredData
+  structuredData,
+  customFavicon
 } = Astro.props as Props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -31,8 +33,12 @@ const fullTitle = pageTitle ? `${pageTitle} | ${siteName}` : siteName;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     
-    <!-- Random favicon will be set by JavaScript from gallery portraits -->
-    <script src="/js/random-favicon.js" is:inline></script>
+    <!-- Favicon logic: use custom favicon if provided, otherwise random -->
+    {customFavicon ? (
+      <link rel="icon" href={customFavicon} type="image/jpeg" />
+    ) : (
+      <script src="/js/random-favicon.js" is:inline></script>
+    )}
     
     <link rel="canonical" href={canonicalURL} />
 
