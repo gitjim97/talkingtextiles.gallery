@@ -27,6 +27,12 @@
     <img class="slide" src="images/Mrs_Annies_Nience.jpg" alt="Mrs Annies Nience" />
     <img class="slide" src="images/Nigel.jpg" alt="Nigel" />
     <img class="slide" src="images/Untitled-1.jpg" alt="Untitled-1" />
+    <img class="slide" src="images/show/DAW1.jpg" alt="Show image 1" />
+    <img class="slide" src="images/show/DAW2.jpg" alt="Show image 2" />
+    <img class="slide" src="images/show/DAW3.jpg" alt="Show image 3" />
+    <img class="slide" src="images/show/DAW4.jpg" alt="Show image 4" />
+    <img class="slide" src="images/show/DAW5.jpg" alt="Show image 5" />
+    <img class="slide" src="images/show/DAW6.jpg" alt="Show image 6" />
   </div>
   <div class="hero-overlay">
     <h1>Talking Textiles</h1>
@@ -48,11 +54,25 @@
 <main class="intro">
   <section class="gallery-preview">
     <h2>Gallery Preview</h2>
-    <div class="preview-row">
-      <a href="gallery.html"><img src="images/mama.jpg" alt="Portrait 1"></a>
-      <a href="gallery.html"><img src="images/Mrs_Annies_Nience.jpg" alt="Portrait 2"></a>
-      <a href="gallery.html"><img src="images/Untitled-1.jpg" alt="Portrait 3"></a>
-      <a href="gallery.html"><img src="images/Copy_of_Gravey.jpg" alt="Portrait 4"></a>
+    <div class="preview-container">
+      <button class="preview-nav prev" aria-label="previous gallery images">&#10094;</button>
+      <div class="preview-row">
+        <a href="gallery.html"><img src="images/Angela_Davis.jpg" alt="Angela Davis"></a>
+        <a href="gallery.html"><img src="images/Copy_of_Gravey.jpg" alt="Copy of Gravey"></a>
+        <a href="gallery.html"><img src="images/Copy_of_Lillia_s_mom.jpg" alt="Lillia's mom"></a>
+        <a href="gallery.html"><img src="images/Copy_of_pam_mom_2.jpg" alt="Pam mom 2"></a>
+        <a href="gallery.html"><img src="images/Cynthia.jpg" alt="Cynthia"></a>
+        <a href="gallery.html"><img src="images/daddy.jpg" alt="Daddy"></a>
+        <a href="gallery.html"><img src="images/Frans_grand_mother.jpg" alt="Frans grandmother"></a>
+        <a href="gallery.html"><img src="images/Jeanneta_art.jpg" alt="Jeanneta"></a>
+        <a href="gallery.html"><img src="images/Kamala.jpg" alt="Kamala"></a>
+        <a href="gallery.html"><img src="images/Malcom_X.jpg" alt="Malcom X"></a>
+        <a href="gallery.html"><img src="images/mama.jpg" alt="Mama"></a>
+        <a href="gallery.html"><img src="images/Mrs_Annies_Nience.jpg" alt="Mrs Annies Nience"></a>
+        <a href="gallery.html"><img src="images/Nigel.jpg" alt="Nigel"></a>
+        <a href="gallery.html"><img src="images/Untitled-1.jpg" alt="Untitled"></a>
+      </div>
+      <button class="preview-nav next" aria-label="next gallery images">&#10095;</button>
     </div>
   </section>
 </main>
@@ -63,22 +83,44 @@
 </footer>
 
 <!-- Slideshow Script -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll('.slide');
+      let currentIndex = 0;
 
-    function showSlides() {
-      slides.forEach((img, i) => {
-        img.style.opacity = (i === currentIndex) ? '1' : '0';
+      function showSlides() {
+        slides.forEach((img, i) => {
+          img.style.opacity = (i === currentIndex) ? '1' : '0';
+        });
+        currentIndex = (currentIndex + 1) % slides.length;
+      }
+
+      showSlides();
+      setInterval(showSlides, 5000);
+
+      const previewRow = document.querySelector('.preview-row');
+      const previewImgs = document.querySelectorAll('.preview-row img');
+      let previewIndex = 0;
+
+      function scrollPreview() {
+        const target = previewImgs[previewIndex];
+        previewRow.scrollTo({
+          left: target.offsetLeft - previewRow.offsetLeft,
+          behavior: 'smooth'
+        });
+      }
+
+      document.querySelector('.preview-nav.prev').addEventListener('click', () => {
+        previewIndex = (previewIndex - 1 + previewImgs.length) % previewImgs.length;
+        scrollPreview();
       });
-      currentIndex = (currentIndex + 1) % slides.length;
-    }
 
-    showSlides();
-    setInterval(showSlides, 5000);
-  });
-</script>
+      document.querySelector('.preview-nav.next').addEventListener('click', () => {
+        previewIndex = (previewIndex + 1) % previewImgs.length;
+        scrollPreview();
+      });
+    });
+  </script>
 
 
 </body>
